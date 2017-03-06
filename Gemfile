@@ -17,6 +17,9 @@ gem "jbuilder", "~> 2.5"
 gem "bcrypt", "~> 3.1.7"
 gem "bootstrap-sass"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "devise", "~> 4.2"
+gem "omniauth"
+gem "omniauth-facebook"
 
 group :development, :test do
   gem "byebug", platform: :mri
