@@ -1,4 +1,5 @@
 vi:
+  title: "FSS01"
   hello: "Xin chào"
 
   home_page: "Trang chủ"
@@ -6,3 +7,10 @@ vi:
 
   about_page: "Giới thiệu"
   about_page: "Đây là trang giới thiệu"
+
+  admin:
+    side_bar:
+      users: "Quản lý user (demo)"
+      recipes: "Quản lý bài viết (demo)"
+    dash_board:
+      content: "Temporary content for dashboard page"

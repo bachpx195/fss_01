@@ -1,4 +1,5 @@
 en:
+  title: "FSS01"
   hello: "Hello world"
 
   home_page: "home page"
@@ -6,3 +7,10 @@ en:
 
   about_page: "About Page"
   about_page: "This is content"
+
+  admin:
+    side_bar:
+      users: "Quản lý user (demo)"
+      recipes: "Quản lý bài viết (demo)"
+    dash_board:
+      content: "Temporary content for dashboard page"

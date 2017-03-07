@@ -1,0 +1,12 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.admin-page {
+  padding-top: 10px;
+  .admin-sidebar {
+    padding-top: 10px;
+    .affix {
+      position: fixed;
+    }
+  }
+}
