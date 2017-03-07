@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+
+  recipe_form_title: "Tạo mới và chia sẻ công thức"
+  recipe_form_step: "bước"
