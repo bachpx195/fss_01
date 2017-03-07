@@ -1,3 +1,12 @@
-<h2><%= t :home_page %></h2>
-
-<p><%= t :home_page_content %></p>
+<%= render "shared/search" %>
+<br>
+<div class="row">
+  <%= render "slide" %>
+  <%= render "banner", type: Settings.frontend.banner_left %>
+</div>
+<br>
+<div class="row">
+  <%= render "shared/favorite_recipes" %>
+  <%= render "shared/tip_recipes" %>
+</div>
+<br>

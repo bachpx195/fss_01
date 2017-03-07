@@ -1,0 +1,46 @@
+<div class="col-lg-9">
+  <div class="row">
+    <div class="col-lg-6">
+      <h4><%= t "home.favorite_recipes" %></h4>
+    </div>
+    <div class="col-lg-6">
+      <div class="btn-group pull-right" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" id="events-grid">
+          <span class="glyphicon glyphicon-th"></span>
+        </button>
+        <button type="button" class="btn btn-default" id="events-list">
+          <span class="glyphicon glyphicon-list"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="spacer10"></div>
+  <div class="row">
+    <div class="list-mode">
+    </div>
+    <div class="grid-mode">
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <%= render "shared/recipe",
+          type: Settings.frontend.favorite_recipes %>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <%= render "shared/recipe",
+          type: Settings.frontend.favorite_recipes %>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <%= render "shared/recipe",
+          type: Settings.frontend.favorite_recipes %>
+      </div>
+    </div>
+    <div id="cource-list"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <button type="button" class="col-lg-4 col-lg-offset-4 btn btn-danger"
+        id="addCource"><%= t "home.read_more" %></button>
+    </div>
+  </div>
+  <br>
+  <%= render "banner", type: Settings.frontend.banner_middle %>
+  <div class="spacer20"></div>
+</div>

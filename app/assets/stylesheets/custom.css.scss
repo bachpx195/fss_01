@@ -1,6 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 .admin-page {
   padding-top: 10px;
   .admin-sidebar {
@@ -8,5 +5,15 @@
     .affix {
       position: fixed;
     }
+  }
+}
+
+.frontend {
+  #banner_middle {
+    width: 100%;
+  }
+  .recipe-img {
+    height: 200px;
+    width: 300px;
   }
 }
