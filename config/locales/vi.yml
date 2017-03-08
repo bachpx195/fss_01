@@ -43,3 +43,10 @@ vi:
   # Cac loai thong bao errors
   errors:
     user_not_found: "Không tìm thấy user!"
+    recipe_not_found: "Không tìm thấy công thức này !"
+
+  recipe:
+    likes_count: "lượt thích"
+    views_count: "lượt xem"
+    materials: "nguyên liệu"
+    steps: "các bước thực hiện"

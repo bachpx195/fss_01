@@ -11,6 +11,11 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :activities, dependent: :destroy
 
+  enum role: {admin: 0, user: 1}
+
+  validates :name, presence: true
+  validates :email, presence: true
+
   class << self
     def from_omniauth auth
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

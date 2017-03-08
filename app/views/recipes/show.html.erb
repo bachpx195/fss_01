@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-sm-5">
+    <%= image_tag @recipe.cover, class: "recipe-show-cover" %>
+  </div>
+  <div class="col-sm-7">
+    <% @recipe.categories.each do |category| %>
+      <div class="ui large orange label">
+        <%= category.category_group.name %>
+        <span>:</span>
+        <div class="detail">
+          <%= category.name %>
+        </div>
+      </div>
+    <% end %>
+    <br/>
+    <h1><%= @recipe.name %></h1>
+    <div class="ui large star massive rating" data-max-rating="5"
+      data-rating="<%= @recipe.votes_average %>"></div>
+    <p>
+      <%= @recipe.likes_count %> <%= t "recipe.likes_count" %>
+      <span> | </span>
+      <%= @recipe.views_count %> <%= t "recipe.views_count" %>
+    </p>
+    <br/>
+    <h4><%= @recipe.description %></h4>
+  </div>
+</div>
+<div class="row">
+  <div class="ui horizontal divider">
+    <h3><%= t "recipe.materials" %></h3>
+  </div>
+  <ul>
+    <% @recipe.materials.each do |material| %>
+      <li>
+        <h4>
+          <strong><%= material.name %></strong>
+          <% if material.number? %>
+            <span>:</span>
+            <%= material.number %>
+            <span> </span>
+            <%= material.unit %>
+          <% end %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div class="row">
+  <div class="ui horizontal divider">
+    <h3><%= t "recipe.steps" %></h3>
+  </div>
+  <ul>
+    <% @recipe.steps.each do |step| %>
+      <li>
+        <%= step.content %>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     devise_for :users, skip: :omniauth_callbacks
     resources :users
+    resources :recipes, only: [:show]
 
     namespace :admin do
       root "dashboard#home"
