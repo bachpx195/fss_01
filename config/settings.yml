@@ -1,0 +1,8 @@
+frontend:
+  banner_left: "banner_left"
+  banner_middle: "banner_middle"
+
+  favorite_recipes: "favorite_recipes"
+  tip_recipes: "tip_recipes"
+
+  home_page: "home"

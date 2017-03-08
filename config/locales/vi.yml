@@ -2,11 +2,27 @@ vi:
   title: "FSS01"
   hello: "Xin chào"
 
-  home_page: "Trang chủ"
-  home_page_content: "Đây là trang chủ."
+  frontend:
+    company: "FRAMGIA"
+    new_recipe: "Tạo công thức"
+    sign_up: "Đăng ký"
+    sign_in: "Đăng nhập"
+    home_page: "Trang chủ"
+    search: "Tìm kiếm"
+    app_name: "FOOD SOCIAL SYSTEM"
+    design_by: "Thiết kế bởi"
+    team: "FRAMGIA-TEAM"
 
-  about_page: "Giới thiệu"
-  about_page: "Đây là trang giới thiệu"
+  home:
+    favorite_recipes: "Món ăn được xem nhiều nhất"
+    read_more: "Xem thêm"
+    previous: "Trước"
+    next: "Sau"
+    guide: "Hướng dẫn"
+
+  about:
+    page_name: "Giới thiệu"
+    page_content: "Đây là trang giới thiệu"
 
   admin:
     side_bar:
@@ -14,3 +30,7 @@ vi:
       recipes: "Quản lý bài viết (demo)"
     dash_board:
       content: "Temporary content for dashboard page"
+
+  demo:
+    name: "Đây là tên"
+    view: "Số lượt xem"
