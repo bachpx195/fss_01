@@ -5,7 +5,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="<%= "active" if params[:page] == Settings.frontend.home_page %>">
-        <%= link_to t("frontend.home_page"), root_url %></li>
+        <%= link_to t("frontend.home_page"), root_url %>
+      </li>
     </ul>
     <div class="col-sm-3 col-md-3">
       <form class="navbar-form" role="search">
@@ -20,40 +21,39 @@
       </form>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to do %>
-        <span class="glyphicon glyphicon-upload"></span>
+      <li>
+        <%= link_to do %>
+          <span class="glyphicon glyphicon-upload"></span>
           <%= t "frontend.new_recipe" %>
         <% end %>
       </li>
-      <li><%= link_to do %>
-        <span class="glyphicon glyphicon-user"></span> <%= t "frontend.sign_up"
-          %>
-        <% end %>
-      </li>
-      <li><%= link_to do %>
-        <span class="glyphicon glyphicon-log-in"></span>
-        <%= t "frontend.sign_in" %><% end %>
-      </li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to current_user do %>
+            <span class="glyphicon glyphicon-user"></span>
+            <%= t "frontend.profile" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <span class="glyphicon glyphicon-log-out"></span>
+            <%= t "frontend.sign_out" %>
+          <% end %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to new_user_registration_path do %>
+            <span class="glyphicon glyphicon-user"></span>
+            <%= t "frontend.sign_up" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <span class="glyphicon glyphicon-log-in"></span>
+            <%= t "frontend.sign_in" %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to t("header.Fss_01"), root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("header.home"), root_path %></li>
-        <li><%= link_to t("header.help"), "#" %></li>
-        <% if user_signed_in? %>
-          <li><%= link_to t("header.profile"), current_user %></li>
-          <li><%= link_to t("header.signout"), destroy_user_session_path,
-            method: :delete %></li>
-        <% else %>
-          <li><%= link_to t("header.signup"),
-            new_user_registration_path %></li>
-          <li><%= link_to t("header.signin"), new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
