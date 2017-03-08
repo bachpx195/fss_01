@@ -1,5 +1,8 @@
 class Recipe < ApplicationRecord
   belongs_to :user
+  mount_uploader :cover, ImageUploader
+
+  after_create :update_status
 
   has_many :collections_recipes
   has_many :collections, through: :collections_recipes
@@ -12,10 +15,12 @@ class Recipe < ApplicationRecord
   has_many :steps, dependent: :destroy
   has_many :materials, dependent: :destroy
 
-  enum status: {draft: 0, published: 1, edit_request: 2, publish_request: 3}
+  accepts_nested_attributes_for :steps, allow_destroy: true,
+    reject_if: :all_blank
+  accepts_nested_attributes_for :materials, allow_destroy: true,
+    reject_if: :all_blank
 
-  accepts_nested_attributes_for :steps, allow_destroy: true
-  accepts_nested_attributes_for :materials, allow_destroy: true
+  enum status: {draft: 0, published: 1, edit_request: 2, publish_request: 3}
 
   validates :name, presence: true
   validates :description, presence: true
@@ -28,5 +33,10 @@ class Recipe < ApplicationRecord
 
   def list_comments
     comments.includes(:user).by_posted_time
+  end
+
+  private
+  def update_status
+    update_attributes status: :published
   end
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     get "/pages/*page", to: "pages#show"
     root "pages#show", page: "home"
+    resources :recipes
 
     devise_for :users, skip: :omniauth_callbacks
     resources :users, only: :show

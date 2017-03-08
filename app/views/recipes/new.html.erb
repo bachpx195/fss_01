@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-lg-3">
+    <%= render "shared/user_recipe_left_sidebar" %>
+  </div>
+  <div class="col-lg-9">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t "recipe.create_recipe" %></h3>
+      </div>
+      <div class="panel-body">
+        <%= render "form", recipe: @recipe %>
+      </div>
+    </div>
+  </div>
+</div>

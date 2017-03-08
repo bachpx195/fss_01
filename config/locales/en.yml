@@ -2,10 +2,10 @@ en:
   title: "FSS01"
   hello: "Hello world"
 
-  # text de hien demo item
   demo:
-    name: "This is name"
+    name: "name"
     view: "Views"
+    number: "This is name"
 
   frontend:
     company: "FRAMGIA"
@@ -20,7 +20,6 @@ en:
     design_by: "Design by"
     team: "FRAMGIA-TEAM"
 
-  # translate cho trang home
   home:
     favorite_recipes: "Most view Recipes"
     read_more: "Read more"
@@ -32,7 +31,6 @@ en:
     page_name: "About Page"
     page_content: "This is about page"
 
-  # Trang admin
   admin:
     side_bar:
       users: "Users (demo)"
@@ -44,8 +42,8 @@ en:
       change_role_title: "Change Role"
       change_success: "Update Success!"
       title: "All Users"
+      content: ""
 
-  # Cac loai thong bao errors
   errors:
     user_not_found: "User not found!"
     recipe_not_found: "Recipe not found!"
@@ -57,6 +55,39 @@ en:
     materials: "Materials"
     steps: "Steps"
     comments: "Comments"
+
+    user_not_found: "User not found!"
+    recipe_not_found: "Recipe not found!"
+
+  recipe:
+    create_recipe: "Create Recipe"
+    user_recipe_manager: "User recipe manage"
+    user_recipe_registed: "User recipe registed"
+    cover: "Cover"
+    likes_count: "Likes count"
+    views_count: "Views count"
+    materials: "Materials"
+    steps: "Step"
+    cover: "Cover"
+    name: "Name"
+    desc: "Desciption"
+    duration: "Duration"
+    duration_minute: "Duration Minute"
+    add_step: "Add step"
+    add_materials: "Add Materials"
+    remove: "Remove"
+    commit_form: "Commit form"
+    post: "Posr"
+    success: "Success"
+
+  step:
+    content: "Content"
+    number_step: "Number step"
+
+  material:
+    name: "Name"
+    number: "Number"
+    unit: "Unit"
 
   like:
     like_button: "like"

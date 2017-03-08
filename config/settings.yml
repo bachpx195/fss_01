@@ -6,3 +6,6 @@ frontend:
   tip_recipes: "tip_recipes"
 
   home_page: "home"
+
+recipe_form:
+  default_step: "1"

@@ -21,9 +21,8 @@
       </form>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <%= link_to do %>
-          <span class="glyphicon glyphicon-upload"></span>
+      <li><%= link_to new_recipe_path do %>
+        <span class="glyphicon glyphicon-upload"></span>
           <%= t "frontend.new_recipe" %>
         <% end %>
       </li>
