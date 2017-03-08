@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pundit
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   protect_from_forgery with: :exception
   before_action :set_locale
   before_action :set_ransack_object
@@ -19,5 +21,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit :sign_up, keys: [:name]
+  end
+
+  def user_not_authorized
+    flash[:error] = t "notification.not_admin"
+    redirect_to request.referrer || new_user_session_path
   end
 end

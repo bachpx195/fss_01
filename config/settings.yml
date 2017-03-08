@@ -9,3 +9,7 @@ frontend:
 
 recipe_form:
   default_step: "1"
+
+recipe_index_type:
+  posted: "posted"
+  draft: "draft"
