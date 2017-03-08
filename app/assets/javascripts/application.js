@@ -22,4 +22,14 @@ $(document).on('turbolinks:load', function(){
       $(".alert").alert('close');
   });
   $('.ui.rating').rating();
+})
+$(document).on('change', '.user_role', function(){
+  var test = $(this).parent().prev().children().attr('id');
+  index = $('.user_role option:selected').val();
+  $.ajax({
+    url: "users/" + test,
+    type: "PUT",
+    dataType: "script",
+    data: {"key": index},
+  });
 });

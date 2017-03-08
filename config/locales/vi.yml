@@ -39,6 +39,11 @@ vi:
       recipes: "Quản lý bài viết (demo)"
     dash_board:
       content: "Temporary content for dashboard page"
+    users:
+      name_title: "Name"
+      change_role_title: "Change Role"
+      change_success: "Update Success!"
+      title: "All Users"
 
   # Cac loai thong bao errors
   errors:
