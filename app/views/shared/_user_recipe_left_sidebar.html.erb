@@ -1,0 +1,20 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t "recipe.user_recipe_manager" %></h3>
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-stacked">
+      <div clas="col-lg-12">
+        <li role="presentation"
+          class="active" ><%= link_to t("recipe.create_recipe"),
+            new_recipe_path %></li>
+      </div>
+      <div clas="col-lg-12">
+        <li role="presentation">
+          <%= link_to t "recipe.user_recipe_registed" %>
+          <span class="badge pull-right"><%= t "demo.number" %></span>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>

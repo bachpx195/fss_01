@@ -1,0 +1,19 @@
+<div class="form-group fields">
+  <div class="row">
+    <div class="col-lg-4">
+      <%= f.label t "material.name" %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="col-lg-2">
+      <%= f.label t "material.number" %><br>
+      <%= f.number_field :number, class: "form-control" %>
+    </div>
+    <div class="col-lg-3">
+      <%= f.label t "material.unit" %><br>
+      <%= f.text_field :unit, class: "form-control" %>
+    </div>
+    <div class="col-lg-3">
+      <%= link_to_remove_fields t("recipe.remove"), f %>
+    </div>
+  </div>
+</div>

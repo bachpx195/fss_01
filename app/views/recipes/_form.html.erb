@@ -1,0 +1,55 @@
+<%= form_for @recipe, html: {multipart: true} do |f| %>
+  <div class="form-inputs">
+    <div class="form-group">
+      <%= f.label t "recipe.cover" %><br>
+      <%= f.file_field :cover %>
+      <% if f.object.cover? %>
+          <%= image_tag f.object.cover.thumb.url %>
+          <%= f.label :remove_cover %>
+          <%= f.check_box :remove_cover %>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= f.label t "recipe.name" %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-inputs form-horizontal">
+      <div class="ui horizontal divider">
+        <p><%= t "recipe.materials" %></p>
+      </div>
+      <%= f.fields_for :materials do |material| %>
+          <%= render "material_fields", f: material %>
+      <% end %>
+      <p><%= link_to_add_fields t("recipe.add_materials"), f, :materials %></p>
+    </div>
+    <div class="form-group">
+      <%= f.label t "recipe.desc" %><br>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label t "recipe.duration" %><br>
+      <div class="row">
+        <div class="col-md-3">
+          <%= f.number_field :duration, class: "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <label class="control-label left">
+          <%= t "recipe.duration_minute" %></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-inputs form-horizontal">
+      <%= f.fields_for :steps, html: {multipart: true} do |step| %>
+        <%= render "step_fields", f: step %>
+      <% end %>
+      <p><%= link_to_add_fields t("recipe.add_step"), f, :steps %></p>
+    </div>
+  </div>
+  <br/>
+  <div class="form-actions">
+    <div class="pull-right">
+      <%= f.button :submit, class: "btn btn-primary",
+        value: t("recipe.post"), name: t("recipe.commit_form") %>
+    </div>
+  </div>
+<% end %>
