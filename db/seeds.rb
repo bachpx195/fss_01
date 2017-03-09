@@ -45,5 +45,8 @@ Recipe.first.steps.create content: "đổ cơm vào", order: 1
 Recipe.first.steps.create content: "cho trứng vào", order: 2
 Recipe.first.steps.create content: "ăn", order: 3
 
-Recipe.first.comments.create user: User.find(2), content: "tuyệt vời ^^"
-Recipe.first.comments.create user: User.find(3), content: "ngon quá ^^"
+Recipe.first.comments.create(user: User.find(2), content: "tuyệt vời ^^")
+Recipe.first.comments.create(user: User.find(3), content: "ngon quá ^^")
+
+Report.create(user: User.first, recipe: Recipe.first, content: "abc")
+Report.create(user: User.second, recipe: Recipe.first, content: "123")

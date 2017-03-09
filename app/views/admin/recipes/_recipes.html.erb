@@ -1,0 +1,28 @@
+<table class="table table-striped">
+    <tr>
+      <th><%= t("admin.recipes.id") %></th>
+      <th><%= t("admin.recipes.recipename") %></th>
+      <th><%= t("admin.recipes.author") %></th>
+      <th>
+        <span><%= t("admin.recipes.status") %></span>
+        <%= select_tag ("status"),
+          options_for_select(@statuses, @status_filter),
+          class: "filter_recipes_status",
+          include_blank: true
+        %>
+      </th>
+    </tr>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.id %></td>
+        <td><%= link_to recipe.name , recipe  %></td>
+        <td><%= recipe.user.name %></td>
+        <td>
+          <%= select_tag :status,
+            options_for_select(@statuses, recipe.status),
+            class: "recipe_status", id: recipe.id
+          %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
