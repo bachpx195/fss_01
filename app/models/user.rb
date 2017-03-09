@@ -16,6 +16,14 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
 
+  def liked? item
+    likes.find_by likeable: item
+  end
+
+  def find_liked_by liked_item
+    likes.find_by likeable: liked_item
+  end
+
   class << self
     def from_omniauth auth
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
