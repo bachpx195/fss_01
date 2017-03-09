@@ -1,0 +1,12 @@
+<% if current_user.liked? likeable_item %>
+  <%= form_for current_user.find_liked_by(likeable_item),
+    html: {method: :delete}, remote: true do |f| %>
+    <%= f.submit t("like.unlike_button"), class: "btn btn-sm" %>
+  <% end %>
+<% else %>
+  <%= form_for current_user.likes.build, remote: true do |f| %>
+    <%= f.hidden_field :likeable_id, value: likeable_item.id %>
+    <%= f.hidden_field :likeable_type, value: likeable_item.class.name %>
+    <%= f.submit t("like.like_button"), class: "btn btn-success btn-sm" %>
+  <% end %>
+<% end %>

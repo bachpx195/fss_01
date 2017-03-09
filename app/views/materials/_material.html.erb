@@ -1,0 +1,11 @@
+<li>
+  <h4>
+    <strong><%= material.name %></strong>
+    <% if material.number? %>
+      <span>:</span>
+      <%= material.number %>
+      <span> </span>
+      <%= material.unit %>
+    <% end %>
+  </h4>
+</li>

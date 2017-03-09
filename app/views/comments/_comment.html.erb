@@ -1,0 +1,29 @@
+<div class="comment" id="comment-<%= comment.id %>">
+  <a class="avatar">
+    <img src="https://image.flaticon.com/icons/png/128/338/338481.png">
+  </a>
+  <div class="content">
+    <%= link_to comment.user.name, comment.user, class: "author" %>
+    <div class="metadata">
+      <span class="date">
+        <%= time_ago_in_words comment.created_at %>
+      </span>
+      <span class="like">
+        <i class="heart icon"></i>
+        <span id="comment-<%= comment.id %>-likes-count">
+          <%= comment.likes_count %>
+        </span>
+      </span>
+    </div>
+    <div class="text">
+      <%= comment.content %>
+    </div>
+    <div class="actions">
+      <% if user_signed_in? %>
+        <div class="comment-<%= comment.id %>-like-form">
+          <%= render "users/like_form", likeable_item: comment %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

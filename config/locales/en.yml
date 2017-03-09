@@ -44,9 +44,15 @@ en:
   errors:
     user_not_found: "User not found!"
     recipe_not_found: "Recipe not found!"
+    something_wrong: "Something Wrong @@"
 
   recipe:
     likes_count: "likes"
     views_count: "views"
     materials: "Materials"
     steps: "Steps"
+    comments: "Comments"
+
+  like:
+    like_button: "like"
+    unlike_button: "unlike"
