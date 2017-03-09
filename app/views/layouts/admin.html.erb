@@ -13,7 +13,9 @@
       <div class="row">
         <%= render "layouts/admin_sidebar" %>
         <div class="col-md-9 admin-content">
-          <%= render "layouts/flash" %>
+          <div class="flashes">
+            <%= render "layouts/flash" %>
+          </div>
           <%= yield %>
         </div>
       </div>

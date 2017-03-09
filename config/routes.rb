@@ -7,12 +7,13 @@ Rails.application.routes.draw do
     root "pages#show", page: "home"
 
     devise_for :users, skip: :omniauth_callbacks
-    resources :users
-    resources :recipes, only: [:show]
+    resources :users, only: :show
+    resources :recipes, only: :show
     resources :likes, only: [:create, :destroy]
 
     namespace :admin do
       root "dashboard#home"
+      resources :users
     end
   end
 end

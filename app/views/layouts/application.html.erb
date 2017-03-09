@@ -12,7 +12,9 @@
   <body>
     <%= render "layouts/header" %>
     <div class="container frontend">
-      <%= render "layouts/flash" %>
+      <div class="flashes" >
+        <%= render "layouts/flash" %>
+      </div>
       <%= yield %>
       <br/>
       <%= debug params if Rails.env.development? %>

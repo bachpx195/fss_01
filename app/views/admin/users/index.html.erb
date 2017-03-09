@@ -1,0 +1,24 @@
+<h1><%= t "admin.users.title" %></h1>
+<ul class="users">
+  <ul class="users">
+    <%= will_paginate %>
+    <table class="table table-striped">
+      <tr>
+        <th><%= t "admin.users.name_title" %></th>
+        <th><%= t "admin.users.change_role_title" %></th>
+      </tr>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to user.name, user, id: user.id, class: "user_alert" %>
+          </td>
+          <td>
+            <%= select_tag ("role"), options_for_select(@roles, user.role),
+              class: "user_role" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <%= will_paginate %>
+  </ul>
+</ul>
