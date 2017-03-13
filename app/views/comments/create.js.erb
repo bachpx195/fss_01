@@ -1,0 +1,7 @@
+<% if @comment.errors.any? %>
+  $('#comment-form')
+    .html('<%= j render "form", comment: @comment %>');
+<% else %>
+  $('.comments').prepend("<%= j render @comment %>");
+  $('#comment-form').html('<%= j render "form", comment: @new_comment %>');
+<% end %>

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require turbolinks
 //= require semantic-ui
 //= require_tree .
@@ -22,7 +23,14 @@ $(document).on('turbolinks:load', function(){
       $(".alert").alert('close');
   });
   $('.ui.rating').rating();
-})
+});
+
+$(document).on('click', '.tab-button', function(){
+  $('.active').removeClass('active');
+  let tabname = $(this).attr('data-tab');
+  $('[data-tab="'+ tabname +'"]').addClass('active');
+});
+
 $(document).on('change', '.user_role', function(){
   var test = $(this).parent().prev().children().attr('id');
   index = $('.user_role option:selected').val();

@@ -14,15 +14,25 @@
           <%= comment.likes_count %>
         </span>
       </span>
-    </div>
-    <div class="text">
-      <%= comment.content %>
-    </div>
-    <div class="actions">
       <% if user_signed_in? %>
         <div class="comment-<%= comment.id %>-like-form">
           <%= render "users/like_form", likeable_item: comment %>
         </div>
+      <% end %>
+      <% if policy(comment).edit? %>
+        <%= link_to t("update"), edit_comment_path(comment), remote: true %>
+      <% end %>
+      <% if policy(comment).destroy? %>
+        <%= link_to t("delete"), comment, method: :delete, remote: true,
+          data: {confirm: t("confirm")} %>
+      <% end %>
+    </div>
+    <div class="text">
+      <%= comment.content %>
+    </div>
+    <div class="ui small images">
+      <% comment.images.each do |image| %>
+        <%= image_tag image, class: "ui image" %>
       <% end %>
     </div>
   </div>

@@ -1,4 +1,6 @@
 class Comment < ApplicationRecord
+  mount_uploaders :images, ImageUploader
+
   scope :by_posted_time, -> {order created_at: :desc}
 
   belongs_to :user
