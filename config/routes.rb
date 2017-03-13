@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :users, only: :show
     resources :recipes, only: :show
     resources :likes, only: [:create, :destroy]
+    resources :searches, only: [:index]
 
     namespace :admin do
       root "dashboard#home"

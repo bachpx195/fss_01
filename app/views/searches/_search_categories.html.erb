@@ -1,0 +1,27 @@
+<%= search_form_for @q, url: :searches, html: {method: :get}, remote: true,
+  class: "ui huge form" do |f| %>
+  <div class="inline fields">
+    <div class="eight wide field">
+      <%= f.search_field :name_or_description_cont, class: "form-control",
+        placeholder: t("frontend.search") %>
+    </div>
+    <%= f.submit t("search.filter_button"),
+      class: "ui huge blue button" %>
+  </div>
+  <div class="inline fields">
+    <div class="field">
+      <%= label_tag t "search.sort_by" %>
+      <%= select_tag "sort_by", options_for_select(sort_keys),
+        class: "ui fluid dropdown" %>
+    </div>
+    <% @category_groups.each do |cate_group| %>
+      <div class="field">
+        <%= label_tag cate_group.name %>
+        <%= select_tag "categories[#{cate_group.id}]",
+          options_for_select(cate_group.categories.map{|c| [c.name, c.id]}),
+          class: "form-control select required",
+          include_blank: t("search.default_all") %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

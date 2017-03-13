@@ -15,8 +15,13 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+$font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif !default;
 @import "semantic-ui/modules/rating";
 @import "semantic-ui/elements/label";
 @import "semantic-ui/elements/divider";
 @import "semantic-ui/views/comment";
 @import "semantic-ui/elements/icon";
+@import "semantic-ui/views/card";
+@import "semantic-ui/collections/form";
+@import "semantic-ui/elements/button";
+@import "semantic-ui/modules/checkbox";

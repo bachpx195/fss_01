@@ -1,0 +1,10 @@
+<div class="ui horizontal divider">
+  <h4>
+    <%= "#{t "search.search_for"} \"#{search_keyword}\": " %>
+    <%= @recipes.length %>
+    <%= t "search.results_count" %>
+  </h4>
+</div>
+<div class="row">
+  <%= render @recipes %>
+</div>

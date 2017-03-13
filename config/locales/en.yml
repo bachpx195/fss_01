@@ -50,16 +50,6 @@ en:
     something_wrong: "Something Wrong @@"
 
   recipe:
-    likes_count: "likes"
-    views_count: "views"
-    materials: "Materials"
-    steps: "Steps"
-    comments: "Comments"
-
-    user_not_found: "User not found!"
-    recipe_not_found: "Recipe not found!"
-
-  recipe:
     create_recipe: "Create Recipe"
     user_recipe_manager: "User recipe manage"
     user_recipe_registed: "User recipe registed"
@@ -68,7 +58,7 @@ en:
     views_count: "Views count"
     materials: "Materials"
     steps: "Step"
-    cover: "Cover"
+    comments: "Comments"
     name: "Name"
     desc: "Desciption"
     duration: "Duration"
@@ -77,7 +67,7 @@ en:
     add_materials: "Add Materials"
     remove: "Remove"
     commit_form: "Commit form"
-    post: "Posr"
+    post: "Post"
     success: "Success"
 
   step:
@@ -92,3 +82,14 @@ en:
   like:
     like_button: "like"
     unlike_button: "unlike"
+
+  search:
+    search_for: "search for"
+    filter_button: "Search"
+    results_count: "results"
+    sort_by: "sort by"
+    sort_by_view: "views"
+    sort_by_like: "likes"
+    sort_by_vote: "votes"
+    sort_by_time: "time"
+    default_all: "-- all --"
