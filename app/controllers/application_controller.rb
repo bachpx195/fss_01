@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_not_authorized
-    flash[:error] = t "notification.not_admin"
-    redirect_to request.referrer || new_user_session_path
+    flash[:error] = t "notification.not_authorized"
+    redirect_to request.referrer || root_path
   end
 end

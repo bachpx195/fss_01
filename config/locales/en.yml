@@ -1,6 +1,9 @@
 en:
   title: "FSS01"
   hello: "Hello world"
+  delete: "delete"
+  update: "update"
+  confirm: "You sure ?"
 
   demo:
     name: "name"
@@ -45,9 +48,11 @@ en:
       content: ""
 
   errors:
+    error: "Error"
     user_not_found: "User not found!"
     recipe_not_found: "Recipe not found!"
     something_wrong: "Something Wrong @@"
+    cant_destroy_comment: "Cant delete comment!"
 
   recipe:
     create_recipe: "Create Recipe"
@@ -97,6 +102,10 @@ en:
     like_button: "like"
     unlike_button: "unlike"
 
+  comment:
+    place_holder: "Share your experience with us."
+    submit_button: "Comment"
+
   search:
     search_for: "search for"
     filter_button: "Search"
@@ -112,7 +121,7 @@ en:
     index: "STT"
 
   notification:
-    not_admin: "You cannot perform this action."
+    not_authorized: "You cannot perform this action."
 
   pundit:
     default: "You cannot perform this action."

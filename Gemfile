@@ -24,6 +24,12 @@ gem "omniauth-facebook"
 gem "will_paginate", "3.1.0"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "ransack"
+gem "pundit"
+gem "remotipart"
+gem "config"
+gem "carrierwave"
+gem "mini_magick"
+gem 'rails-i18n', '~> 5.0.0'
 
 group :development, :test do
   gem "byebug", platform: :mri
@@ -35,8 +41,3 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
 end
-
-gem "config"
-gem "carrierwave", "0.11.2"
-gem "mini_magick", "4.5.1"
-gem "pundit"
