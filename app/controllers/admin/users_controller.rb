@@ -5,10 +5,12 @@ class Admin::UsersController < AdminController
 
   def index
     @users = User.paginate page: params[:page]
+    authorize [:admin, @users]
   end
 
   def update
     @user.update_attributes role: params[:key]
+    authorize @users
     respond_to do |format|
       format.js{
         flash[:success] = "Update Success!"

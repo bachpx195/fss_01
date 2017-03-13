@@ -38,14 +38,21 @@ en:
     side_bar:
       users: "Users (demo)"
       recipes: "Recipes (demo)"
+      report: "Roportes (demo)"
     dash_board:
       content: "Temporary content for dashboard page"
     users:
       name_title: "Name"
       change_role_title: "Change Role"
       change_success: "Update Success!"
-      title: "All Users"
+      title_user: "All Users"
+      title_recipe: "All Recipes"
       content: ""
+    recipes:
+      id: "ID"
+      recipename: "Recipename"
+      author: "Author"
+      status: "Status"
 
   errors:
     error: "Error"
@@ -53,6 +60,7 @@ en:
     recipe_not_found: "Recipe not found!"
     something_wrong: "Something Wrong @@"
     cant_destroy_comment: "Cant delete comment!"
+    user_not-authorized: "You must be admin to use this"
 
   recipe:
     create_recipe: "Create Recipe"
@@ -119,9 +127,6 @@ en:
 
   table:
     index: "STT"
-
-  notification:
-    not_authorized: "You cannot perform this action."
 
   pundit:
     default: "You cannot perform this action."

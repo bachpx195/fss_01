@@ -42,6 +42,27 @@ $(document).on('change', '.user_role', function(){
   });
 });
 
+$(document).on('change', '.recipe_status', function(){
+  var status = $('.recipe_status option:selected').val();
+  var recipe_id = $(this).attr('id');
+  $.ajax({
+    url: "recipes/" + recipe_id,
+    type: "PUT",
+    dataType: "script",
+    data: {status: status},
+  });
+});
+
+$(document).on('change', '.filter_recipes_status', function(){
+  var filter = $('.filter_recipes_status option:selected').val();
+  $.ajax({
+    url: "recipes",
+    type: "GET",
+    dataType: "script",
+    data: {"filter": filter},
+  });
+});
+
 function remove_fields(link) {
   $(link).prev('input[type=hidden]').val('1');
   $(link).closest('.fields').hide();
