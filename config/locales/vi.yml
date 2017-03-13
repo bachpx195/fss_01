@@ -365,6 +365,21 @@ vi:
     commit_form: "commit"
     post: "Đăng"
     success: "Tạo công thức thành công"
+    update_success: "Cập nhật công thức thành công"
+    draft: "Lưu nháp"
+    published: "Công khai"
+    collection: "Bộ sưu tập"
+    social: "Tương tác"
+    status: "Trạng thái"
+    no_social: "Không có tương tác"
+    edit: "Sửa"
+    destroy: "Xóa công thức thành công"
+    destoy_confirm: "Bạn muốn xóa không?"
+    recipe_status:
+      draft: "Lưu nháp"
+      published: "Công khai"
+      edit_request: "Yêu cầu sửa"
+      publish_request: "Yêu cầu duyêt"
 
   step:
     content: "Nội dung"
@@ -378,3 +393,12 @@ vi:
   like:
     like_button: "thích"
     unlike_button: "unlike"
+
+  table:
+    index: "STT"
+
+  notification:
+    not_admin: "Bạn không có quyền truy cập"
+
+  pundit:
+    default: "Bạn không có quyền truy cập."

@@ -1,6 +1,7 @@
 module ApplicationHelper
   def link_to_remove_fields name, f
-    f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
+    f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)",
+      "btn btn-danger")
   end
 
   def link_to_add_fields name, f, association
@@ -9,7 +10,8 @@ module ApplicationHelper
       render association.to_s.singularize + "_fields", f: builder
     end
     link_to_function name,
-      "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"
+      "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")",
+      "btn btn-default"
   end
 
   def link_to_function name, *args, &block
@@ -19,7 +21,23 @@ module ApplicationHelper
     onclick = "#{"#{html_options[:onclick]}; " if html_options[:onclick]}#{function}; return false;"
     href = html_options[:href] || "#"
 
-    content_tag :a, name, html_options.merge(:href => href, :onclick => onclick)
+    content_tag :a, name, html_options.merge(:href => href, :onclick => onclick,
+      class: args[1])
+  end
+
+  def format_recipe_social like, comment, star
+    like_str = "<span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span> #{like} &nbsp"
+    comment_str = "<span class=\"glyphicon glyphicon-heart\" aria-hidden=\"true\"></span> #{comment} &nbsp"
+    star_str = "<span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span> #{star} "
+    str = like_str + comment_str + star_str
+  end
+
+  def gravatar_for user, option = {size: 80}
+    gravatar_id = Digest::MD5::hexdigest user.email.downcase
+    size = option[:size]
+    gravatar_url = "https://secure.gravatar.com/avatar/
+      #{gravatar_id}?s=#{size}"
+    image_tag gravatar_url, alt: user.name, class: "gravatar"
   end
 
   def sort_keys

@@ -69,6 +69,20 @@ en:
     commit_form: "Commit form"
     post: "Post"
     success: "Success"
+    draft: "draft"
+    published: "published"
+    collection: "collection"
+    social: "social"
+    status: "status"
+    no_social: "no_social"
+    edit: "edit"
+    destroy: "destroy"
+    destoy_confirm: "Are you sure?"
+    recipe_status:
+      draft: "draft"
+      published: "published"
+      edit_request: "edit request"
+      publish_request: "publish request"
 
   step:
     content: "Content"
@@ -93,3 +107,12 @@ en:
     sort_by_vote: "votes"
     sort_by_time: "time"
     default_all: "-- all --"
+
+  table:
+    index: "STT"
+
+  notification:
+    not_admin: "You cannot perform this action."
+
+  pundit:
+    default: "You cannot perform this action."

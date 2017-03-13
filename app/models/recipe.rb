@@ -9,6 +9,8 @@ class Recipe < ApplicationRecord
 
   belongs_to :user
   mount_uploader :cover, ImageUploader
+  scope :order_desc, ->{order created_at: :desc}
+  scope :not_draft, ->{where.not status: :draft}
 
   after_create :update_status
 

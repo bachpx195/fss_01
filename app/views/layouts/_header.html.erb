@@ -25,18 +25,26 @@
       </div>
     <% end %>
     <ul class="nav navbar-nav navbar-right">
-      <li>
+      <li class="<%= "active" if params[:controller] == "recipes" && params[:action] == "new" %>" >
         <%= link_to new_recipe_path do %>
           <span class="glyphicon glyphicon-upload"></span>
           <%= t "frontend.new_recipe" %>
         <% end %>
       </li>
       <% if user_signed_in? %>
-        <li>
-          <%= link_to current_user do %>
-            <span class="glyphicon glyphicon-user"></span>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="glyphicon glyphicon-user"></span></span>
             <%= t "frontend.profile" %>
-          <% end %>
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to recipes_path(type: Settings.recipe_index_type.posted) do %>
+                <span class="glyphicon glyphicon-map-marker">
+                  <%= t "recipe.user_recipe_manager" %></span>
+              <% end %>
+            </li>
+          </ul>
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
