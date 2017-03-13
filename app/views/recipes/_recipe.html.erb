@@ -1,0 +1,25 @@
+<div class="col-md-4">
+  <div class="ui card">
+    <div class="image">
+      <%= image_tag recipe.cover, class: "image" %>
+    </div>
+    <div class="content">
+      <%= link_to recipe.name, recipe, class: "header" %>
+      <div class="meta">
+        <div class="ui star rating" data-max-rating="5"
+          data-rating="<%= recipe.votes_average %>"></div>
+      </div>
+      <p>
+      </div>
+      <div class="content">
+        <span class="right floated">
+          <i class="heart outline like icon"></i>
+          <%= recipe.likes_count %> <%= t "recipe.likes_count" %>
+        </span>
+        <span class="left floated">
+          <i class="comment icon"></i>
+          <%= recipe.views_count %> <%= t "recipe.views_count" %>
+        </span>
+      </div>
+    </div>
+  </div>

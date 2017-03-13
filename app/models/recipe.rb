@@ -1,4 +1,12 @@
 class Recipe < ApplicationRecord
+  scope :filter_by_categories, -> category_ids {
+    joins(:categories_recipes)
+      .where({categories_recipes: {category_id: category_ids}})
+      .group(:id)
+      .having "count(distinct categories_recipes.category_id) = ?",
+        category_ids.count
+  }
+
   belongs_to :user
   mount_uploader :cover, ImageUploader
 

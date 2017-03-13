@@ -1,4 +1,99 @@
 vi:
+  title: "FSS01"
+  hello: "Xin chào"
+
+  demo:
+    name: "Đây là tên"
+    view: "Số lượt xem"
+    number: "This is name"
+
+  frontend:
+    company: "FRAMGIA"
+    new_recipe: "Tạo công thức"
+    sign_up: "Đăng ký"
+    sign_in: "Đăng nhập"
+    sign_out: "Thoát"
+    profile: "Của tôi"
+    home_page: "Trang chủ"
+    search: "Tìm kiếm"
+    app_name: "FOOD SOCIAL SYSTEM"
+    design_by: "Thiết kế bởi"
+    team: "FRAMGIA-TEAM"
+
+  home:
+    favorite_recipes: "Món ăn được xem nhiều nhất"
+    read_more: "Xem thêm"
+    previous: "Trước"
+    next: "Sau"
+    guide: "Hướng dẫn"
+
+  about:
+    page_name: "Giới thiệu"
+    page_content: "Đây là trang giới thiệu"
+
+  admin:
+    side_bar:
+      users: "Quản lý user (demo)"
+      recipes: "Quản lý bài viết (demo)"
+    dash_board:
+      content: "Temporary content for dashboard page"
+    users:
+      name_title: "Tên"
+      change_role_title: "Set quyền"
+      change_success: "Cập nhật thành công !"
+      title: "Danh sách user"
+      content: ""
+
+  errors:
+    user_not_found: "Không tìm thấy user!"
+    recipe_not_found: "Không tìm thấy công thức này !"
+    something_wrong: "Có lỗi xảy ra !"
+
+  recipe:
+    create_recipe: "Tạo công thức"
+    user_recipe_manager: "User recipe manage"
+    user_recipe_registed: "User recipe registed"
+    cover: "Ảnh đại diện"
+    likes_count: "lượt thích"
+    views_count: "lượt xem"
+    materials: "nguyên liệu"
+    steps: "các bước thực hiện"
+    comments: "bình luận"
+    name: "Tên"
+    desc: "Mô tả"
+    duration: "Thời gian"
+    duration_minute: "Duration Minute"
+    add_step: "Thêm bước"
+    add_materials: "Thêm nguyên liệu"
+    remove: "Bỏ"
+    commit_form: "Tạo công thức"
+    post: "Post"
+    success: "Thành công"
+
+  step:
+    content: "nội dung"
+    number_step: "STT"
+
+  material:
+    name: "Tên"
+    number: "Số lượng"
+    unit: "Đơn vị"
+
+  like:
+    like_button: "thích"
+    unlike_button: "unlike"
+
+  search:
+    search_for: "tìm kiếm cho"
+    filter_button: "Lọc"
+    results_count: "kết quả"
+    sort_by: "sắp xếp"
+    sort_by_view: "lượt xem"
+    sort_by_like: "yêu thích"
+    sort_by_vote: "xếp hạng"
+    sort_by_time: "thời gian"
+    default_all: "-- tất cả --"
+
   activerecord:
     errors:
       messages:
