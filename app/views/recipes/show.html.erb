@@ -1,8 +1,10 @@
-<div class="row bottom-buffer">
-  <div class="col-sm-5">
-    <%= image_tag @recipe.cover, class: "ui big image" %>
+<div class="ui stackable centered grid">
+  <div class="seven wide column">
+    <div class="ui segment">
+      <%= image_tag @recipe.cover, class: "ui big image" %>
+    </div>
   </div>
-  <div class="col-sm-7">
+  <div class="nine wide column">
     <% @recipe.list_categories.each do |category| %>
       <div class="ui large orange label">
         <%= category.category_group.name %>
@@ -12,7 +14,6 @@
         </div>
       </div>
     <% end %>
-    <br/>
     <h1><%= @recipe.name %>
       <div class="pull-right">
         <%= link_to t("recipe.edit"),
@@ -21,50 +22,69 @@
           method: :delete if policy(@recipe).destroy? %>
       </div>
     </h1>
-    <div class="ui large star massive rating"
-      data-max-rating="<%= Settings.rating.max_rating %>"
-      data-rating="<%= @recipe.votes_average %>"></div>
-    <p>
+    <%= render "shared/vote_stars", score: @recipe.votes_average %>
+    <h5>
       <%= @recipe.likes_count %> <%= t "recipe.likes_count" %>
       <span> | </span>
       <%= @recipe.views_count %> <%= t "recipe.views_count" %>
-    </p>
-    <br/>
-    <h4><%= @recipe.description %></h4>
-  </div>
-</div>
-<div class="row">
-  <div class="ui top attached tabular menu">
-    <div class="tab-button active item" data-tab="tab-1">
-      <h4><%= t "recipe.steps" %></h4>
+    </h5>
+    <div class="ui stacked segment">
+      <h4>"<%= @recipe.description %>"</h4>
+      <span>
+        <%= image_tag @recipe.user.avatar, class: "ui mini circular image" %>
+        <h6><%= @recipe.user.name %></h6>
+      </span>
     </div>
-    <div class="tab-button item" data-tab="tab-2">
-      <h4><%= t "recipe.comments" %></h4>
+    <div>
+      <%= render "shared/vote_button", recipe: @recipe %>
+      <%= link_to "#",
+        class: "ui circular icon massive like-recipe button" do %>
+        <i class="empty heart icon"></i>
+      <% end %>
+      <%= link_to "#",
+        class: "ui circular yellow icon massive category-recipe button" do %>
+        <i class="bookmark icon"></i>
+      <% end %>
+      <%= link_to "#",
+        class: "ui circular blue icon massive share-recipe button" do %>
+        <i class="facebook icon"></i>
+      <% end %>
     </div>
   </div>
-  <div class="ui tab bottom attached active segment" data-tab="tab-1">
-    <div class="row">
-      <div class="col-md-3">
-        <h4><%= t "recipe.materials" %></h4>
-        <div class="ui divider"></div>
-        <ul>
-          <%= render @recipe.materials %>
-        </ul>
+  <div class="row">
+    <div class="ui top attached tabular menu">
+      <div class="tab-button active item" data-tab="tab-1">
+        <h4><%= t "recipe.steps" %></h4>
       </div>
-      <div class="col-md-9">
-        <div class="text-content">
-          <%= render @recipe.steps %>
+      <div class="tab-button item" data-tab="tab-2">
+        <h4><%= t "recipe.comments" %></h4>
+      </div>
+    </div>
+    <div class="ui tab bottom attached active segment" data-tab="tab-1">
+      <div class="row">
+        <div class="col-md-3">
+          <h4><%= t "recipe.materials" %></h4>
+          <div class="ui divider"></div>
+          <ul>
+            <%= render @recipe.materials %>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <div class="text-content">
+            <%= render @recipe.steps %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="ui tab bottom attached segment" data-tab="tab-2">
-    <div id="comment-form">
-      <%= render "comments/form", comment: @recipe.comments.build %>
-    </div>
-    <div class="ui divider"></div>
-    <div class="ui huge comments">
-      <%= render @recipe.list_comments %>
+    <div class="ui tab bottom attached segment" data-tab="tab-2">
+      <div id="comment-form">
+        <%= render "comments/form", comment: @new_comment %>
+      </div>
+      <div class="ui divider"></div>
+      <div class="ui huge comments">
+        <%= render @recipe.list_comments %>
+      </div>
     </div>
   </div>
 </div>
+<div id="modal-window" class="modal fade" role="dialog"></div>

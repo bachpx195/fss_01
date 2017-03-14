@@ -140,3 +140,10 @@ en:
       zero: "%{count} collection from members."
       one: "%{count} collection from members."
       other: "%{count} collections from members."
+
+  vote:
+    header: "Vote for this recipe."
+    star:
+      one: "%{score} star"
+      other: "%{score} stars"
+    submit: "Vote"

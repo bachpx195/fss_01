@@ -1,0 +1,5 @@
+$('#modal-window').modal('hide');
+$('.ui.rating.vote-recipe')
+  .replaceWith("<%= j render "shared/vote_stars",
+    score: @recipe.votes_average %>");
+$('.ui.rating.vote-recipe').rating('disable');

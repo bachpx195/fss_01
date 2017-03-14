@@ -21,11 +21,6 @@ User.order("RAND()").first.recipes.create name: "rau củ nướng",
   remote_cover_url: "http://images.media-allrecipes.com/userphotos/560x315/1486.jpg",
   duration: 20, status: 1
 
-User.order("RAND()").first.recipes.create name: "mì xào thịt viên",
-  description: "Mì ý xào thịt viên",
-  remote_cover_url: "http://images.media-allrecipes.com/userphotos/560x315/1077229.jpg",
-  duration: 20, status: 1
-
 User.order("RAND()").first.recipes.create name: "mỳ pasta",
   description: "A delicious, easy company dish - the flavors are wonderful. A favorite with my family. I usually double the recipe so we can have leftovers.",
   remote_cover_url: "http://images.media-allrecipes.com/userphotos/560x315/525185.jpg",
@@ -81,9 +76,6 @@ Recipe.first.steps.create content: "ăn", order: 3
 
 Recipe.first.comments.create(user: User.find(2), content: "tuyệt vời ^^")
 Recipe.first.comments.create(user: User.find(3), content: "ngon quá ^^")
-
-Report.create(user: User.first, recipe: Recipe.first, content: "abc")
-Report.create(user: User.second, recipe: Recipe.first, content: "123")
 
 Collection.create(user: User.first, name: "các món ăn chay",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
