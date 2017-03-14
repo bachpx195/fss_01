@@ -13,8 +13,10 @@
             <%= link_to user.name, user, id: user.id, class: "user_alert" %>
           </td>
           <td>
-            <%= select_tag ("role"), options_for_select(@roles, user.role),
-              class: "user_role" %>
+            <% unless user.admin? %>
+              <%= select_tag t("admin.users.role"),
+                options_for_select(@roles, user.role), class: "user_role" %>
+            <% end %>
           </td>
         </tr>
       <% end %>
