@@ -58,6 +58,7 @@ en:
     error: "Error"
     user_not_found: "User not found!"
     recipe_not_found: "Recipe not found!"
+    collection_not_found: "Collection not found !"
     something_wrong: "Something Wrong @@"
     cant_destroy_comment: "Cant delete comment!"
     user_not-authorized: "You must be admin to use this"
@@ -130,3 +131,12 @@ en:
 
   pundit:
     default: "You cannot perform this action."
+
+  collection:
+    likes_count: "Likes count"
+    views_count: "Views count"
+    recipes_count: "Recipes"
+    collection_intro:
+      zero: "%{count} collection from members."
+      one: "%{count} collection from members."
+      other: "%{count} collections from members."

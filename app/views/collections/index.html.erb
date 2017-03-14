@@ -1,0 +1,11 @@
+<div class="ui stackable grid">
+  <div class="row">
+    <h1>
+      <%= t "collection.collection_intro", count: @collections_count %>
+    </h1>
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui four stackable doubling cards">
+    <%= render @collections %>
+  </div>
+</div>

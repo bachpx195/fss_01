@@ -1,0 +1,19 @@
+<div class="ui fluid card">
+  <%= link_to collection, class: "image" do %>
+    <%= image_tag collection.cover %>
+  <% end %>
+  <div class="content">
+    <%= link_to truncate(collection.name, length: 25),
+      collection, class: "header" %>
+  </div>
+  <div class="content">
+    <span class="right floated">
+      <i class="heart outline like icon"></i>
+      <%= collection.likes_count %> <%= t "collection.likes_count" %>
+    </span>
+    <span class="left floated">
+      <i class="comment icon"></i>
+      <%= collection.views_count %> <%= t "collection.views_count" %>
+    </span>
+  </div>
+</div>

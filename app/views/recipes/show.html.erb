@@ -21,7 +21,8 @@
           method: :delete if policy(@recipe).destroy? %>
       </div>
     </h1>
-    <div class="ui large star massive rating" data-max-rating="5"
+    <div class="ui large star massive rating"
+      data-max-rating="<%= Settings.rating.max_rating %>"
       data-rating="<%= @recipe.votes_average %>"></div>
     <p>
       <%= @recipe.likes_count %> <%= t "recipe.likes_count" %>

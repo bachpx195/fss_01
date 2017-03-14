@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_filter :authenticate_user!, except: :show
   before_action :find_recipe, except: [:index, :new, :create]
+  before_action :authorize_recipe, except: [:index, :new, :create]
   before_action :list_recipes, only: [:index, :destroy]
 
   after_action :verify_authorized, except: [:index, :new, :create]
@@ -50,11 +51,14 @@ class RecipesController < ApplicationController
   private
   def find_recipe
     @recipe = Recipe.find_by id: params[:id]
-    authorize @recipe
     unless @recipe
       flash[:danger] = t "errors.recipe_not_found"
       redirect_to root_url
     end
+  end
+
+  def authorize_recipe
+    authorize @recipe
   end
 
   def recipe_params

@@ -57,6 +57,7 @@ vi:
     error: "Lỗi"
     user_not_found: "Không tìm thấy user!"
     recipe_not_found: "Không tìm thấy công thức này !"
+    collection_not_found: "Không tìm thấy bộ sưu tập này !"
     something_wrong: "Có lỗi xảy ra !"
     cant_destroy_comment: "Không xóa được comment!"
     user_not-authorized: "You must be admin to use this"
@@ -130,3 +131,9 @@ vi:
 
   pundit:
     default: "Bạn không có quyền truy cập."
+
+  collection:
+    likes_count: "Lượt thích"
+    views_count: "Lượt xem"
+    recipes_count: "Công thức"
+    collection_intro: "%{count} bộ sưu tập công thức từ thành viên."

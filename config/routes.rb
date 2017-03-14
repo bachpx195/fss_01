@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :comments, except: [:index, :show, :new]
     resources :likes, only: [:create, :destroy]
     resources :searches, only: [:index]
+    resources :collections, only: [:index, :show]
 
     namespace :admin do
       root "dashboard#home"
