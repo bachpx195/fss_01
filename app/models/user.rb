@@ -26,6 +26,10 @@ class User < ApplicationRecord
     likes.find_by likeable: liked_item
   end
 
+  def find_voted_by recipe
+    votes.find_by recipe: recipe
+  end
+
   class << self
     def from_omniauth auth
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -1,0 +1,19 @@
+<div class="modal-dialog">
+  <div class="modal-header">
+    <h3><%= t "vote.header" %></h3>
+  </div>
+  <%= form_for [recipe, vote], remote: true do |f| %>
+    <div class="modal-body">
+      <% (1..5).each do |score| %>
+        <%= f.label class: "checkbox-inline" do %>
+          <%= f.radio_button :vote, score %>
+          <%= f.label t("vote.star", score: score) %>
+        <% end %>
+      <% end %>
+      <%= f.hidden_field :recipe_id, value: recipe.id %>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit t("vote.submit"), class: "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>

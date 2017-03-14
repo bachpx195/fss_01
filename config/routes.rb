@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     root "pages#show", page: "home"
     devise_for :users, skip: :omniauth_callbacks
     resources :users, only: :show
-    resources :recipes
+    resources :recipes do
+      resources :votes, except: [:index, :show, :destroy]
+    end
     resources :comments, except: [:index, :show, :new]
     resources :likes, only: [:create, :destroy]
     resources :searches, only: [:index]

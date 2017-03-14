@@ -137,3 +137,8 @@ vi:
     views_count: "Lượt xem"
     recipes_count: "Công thức"
     collection_intro: "%{count} bộ sưu tập công thức từ thành viên."
+
+  vote:
+    header: "Vote cho công thức"
+    star: "%{score} sao"
+    submit: "Vote"
