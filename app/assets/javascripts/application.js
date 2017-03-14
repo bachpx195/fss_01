@@ -53,6 +53,13 @@ $(document).on('change', '.recipe_status', function(){
   });
 });
 
+$(document).on('click', '#delete_recipe', function(){
+  $.ajax({
+    type: 'DELETE',
+    dataType: 'script',
+  });
+});
+
 $(document).on('change', '.filter_recipes_status', function(){
   var filter = $('.filter_recipes_status option:selected').val();
   $.ajax({

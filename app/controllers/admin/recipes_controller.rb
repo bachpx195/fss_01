@@ -1,7 +1,7 @@
 class Admin::RecipesController < AdminController
   before_action :authenticate_user!
   before_action :load_statuses, only: :index
-  before_action :find_recipe, only: :update
+  before_action :find_recipe, only: [:update, :destroy]
 
   def index
     if params.has_key? :filter
@@ -24,6 +24,13 @@ class Admin::RecipesController < AdminController
       format.js{
         flash[:success] = t "admin.users.change_success"
       }
+    end
+  end
+
+  def destroy
+    @recipe.destroy
+    respond_to do |format|
+      format.js
     end
   end
 

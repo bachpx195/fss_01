@@ -14,9 +14,9 @@ class Recipe < ApplicationRecord
 
   after_create :update_status
 
-  has_many :collections_recipes
+  has_many :collections_recipes, dependent: :destroy
   has_many :collections, through: :collections_recipes
-  has_many :categories_recipes
+  has_many :categories_recipes, dependent: :destroy
   has_many :categories, through: :categories_recipes
   has_many :comments, dependent: :destroy
   has_many :likes, as: :likeable

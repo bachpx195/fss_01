@@ -46,6 +46,20 @@ User.order("RAND()").first.recipes.create name: "Cơm cháy tôm xào",
   remote_cover_url: "https://media.cooky.vn/recipe/g1/3599/s400x400/recipe3599-636217136789615370.jpg",
   duration: 20, status: 1
 
+User.second.recipes.create name: "Cha ca",
+  description: "Cha ca + hành tây",
+  remote_cover_url: "http://media.phunutoday.vn/files/uplo"\
+    "ad_images/2014/11/22/com-rang-dua-bo.jpg",
+  duration: 20,
+  status: 0
+
+User.second.recipes.create name: "Thi ham",
+  description: "Thi ham + hành tây",
+  remote_cover_url: "http://media.phunutoday.vn/files/uplo"\
+    "ad_images/2014/11/22/com-rang-dua-bo.jpg",
+  duration: 20,
+  status: 2
+
 CategoryGroup.create name: "Độ khó"
 CategoryGroup.create name: "Cách làm"
 CategoryGroup.create name: "Mùa & lễ"

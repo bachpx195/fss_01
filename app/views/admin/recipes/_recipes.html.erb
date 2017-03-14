@@ -11,9 +11,10 @@
           include_blank: true
         %>
       </th>
+      <th> <%= t "admin.recipes.listReports" %> </th>
     </tr>
     <% @recipes.each do |recipe| %>
-      <tr>
+      <tr id="recipe-<%= recipe.id %>">
         <td><%= recipe.id %></td>
         <td><%= link_to recipe.name , recipe  %></td>
         <td><%= recipe.user.name %></td>
@@ -22,6 +23,14 @@
             options_for_select(@statuses, recipe.status),
             class: "recipe_status", id: recipe.id
           %>
+        </td>
+        <td>
+          <%= link_to admin_recipe_path(recipe.id), method: :delete,
+            data: {confirm: t("admin.recipes.delete_confirm")}, remote: true do %>
+            <span class="btn btn-danger">
+              <p><%= t "admin.recipes.delete" %></p>
+            </span>
+          <% end %>
         </td>
       </tr>
     <% end %>

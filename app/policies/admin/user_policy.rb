@@ -6,4 +6,8 @@ class Admin::UserPolicy < ApplicationPolicy
   def update?
     user.admin?
   end
+
+  def home?
+    user.admin?
+  end
 end

@@ -47,11 +47,15 @@ vi:
       change_success: "Cập nhật thành công !"
       title_user: "All Users"
       title_recipe: "All Recipes"
+      role: "Role"
+
     recipes:
       id: "ID"
       recipename: "Recipename"
       author: "Author"
       status: "Status"
+      delete_confirm: "Are you sure?"
+      delete: "Delete"
 
   errors:
     error: "Lỗi"

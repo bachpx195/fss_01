@@ -1,6 +1,14 @@
 class RecipePolicy < ApplicationPolicy
   def show?
-    user_is_owner_of_record? || user.admin? || @record.published?
+    if @record.published?
+      true
+    elsif user.nil?
+      false
+    elsif  user_is_owner_of_record? || user.admin?
+      true
+    else
+      false
+    end
   end
 
   def update?
