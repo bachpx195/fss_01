@@ -3,6 +3,8 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, omniauth_providers: [:facebook]
 
+  mount_uploader :avatar, ImageUploader
+
   has_many :recipes, dependent: :destroy
   has_many :collections, dependent: :destroy
   has_many :reports, dependent: :destroy

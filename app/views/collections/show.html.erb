@@ -1,0 +1,56 @@
+<div class="ui stackable centered grid">
+  <div class="ten wide column">
+    <h3><%= @collection.name %></h3>
+    <div class="ui small statistics">
+      <div class="statistic">
+        <div class="value">
+          <%= @collection.likes_count %>
+        </div>
+        <div class="label">
+          <%= t "collection.likes_count" %>
+        </div>
+      </div>
+      <div class="statistic">
+        <div class="value">
+          <%= @collection.views_count %>
+        </div>
+        <div class="label">
+          <%= t "collection.views_count" %>
+        </div>
+      </div>
+      <div class="statistic">
+        <div class="value">
+          <%= @collection.recipes.count %>
+        </div>
+        <div class="label">
+          <%= t "collection.recipes_count" %>
+        </div>
+      </div>
+    </div>
+    <div class="ui stacked segment">
+      <h4>"<%= @collection.description %>"</h4>
+      <span>
+        <%= image_tag @collection.user.avatar,
+          class: "ui mini circular image" %>
+        <h6><%= @collection.user.name %></h6>
+      </span>
+    </div>
+  </div>
+  <div class="six wide column">
+    <div class="ui segment">
+      <%= image_tag @collection.cover, class: "ui fluid image" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="ui red inverted one item fluid menu">
+      <div class="item">
+        <h4>
+          <%= t "collection.recipes_count" %> (<%= @collection.recipes.count %>)
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="ui four stackable doubling cards">
+    <%= render @collection.recipes %>
+  </div>
+</div>

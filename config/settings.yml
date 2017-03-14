@@ -13,3 +13,6 @@ recipe_form:
 recipe_index_type:
   posted: "posted"
   draft: "draft"
+
+rating:
+  max_rating: 5
