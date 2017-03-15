@@ -1,0 +1,6 @@
+<% if @collection.errors.any? %>
+  $('#modal-window').html("<%= j render "form" %>");
+<% else %>
+  $('#modal-window').modal('hide');
+  $('#table-collections tbody').prepend("<%= j render @collection %>");
+<% end %>

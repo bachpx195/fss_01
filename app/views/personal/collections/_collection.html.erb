@@ -1,0 +1,19 @@
+<tr id="id-<%= collection.id %>">
+  <td>
+    <%= link_to personal_collection_path(collection) do %>
+      <%= image_tag collection.cover, class: "ui tiny image" %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to personal_collection_path(collection) do %>
+      <h4><%= collection.name %></h4>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to t("update"), edit_personal_collection_path(collection),
+      remote: true, class: "ui primary large basic button" %>
+    <%= link_to t("delete"), personal_collection_path(collection),
+      method: :delete, data: {confirm: t("confirm")},
+      class: "ui negative large basic button" %>
+  </td>
+</tr>
