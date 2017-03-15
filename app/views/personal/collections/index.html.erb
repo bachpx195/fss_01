@@ -1,0 +1,12 @@
+<div class="ui segment">
+  <h1><%= t "personal.sidebar.collections" %></h1>
+  <%= link_to t("collection.create_collection"), new_personal_collection_path,
+    remote: true, class: "ui green button" %>
+  <div class="ui divider"></div>
+  <table class="table table-hover" id="table-collections">
+    <tbody>
+      <%= render @collections %>
+    </tbody>
+  </table>
+</div>
+<div id="modal-window" class="modal fade" role="dialog"></div>

@@ -1,0 +1,41 @@
+<div class="ui segment">
+  <%= link_to personal_collections_path, class: "ui red big button" do %>
+    <i class="reply icon"></i><%= t "back_button" %>
+  <% end %>
+  <h1><%= @collection.name %></h1>
+  <div class="ui divider"></div>
+  <table class="table table-hover">
+    <thead>
+      <th colspan="2">
+        <h5>
+          <strong>
+            <%= t "personal.sidebar.recipes" %>
+            (<%= @feeds.count %>)
+          </strong>
+        </h5>
+      </th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @feeds.each do |feed| %>
+        <tr>
+          <td>
+            <%= link_to feed.recipe do %>
+              <%= image_tag feed.recipe.cover, class: "ui tiny image" %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to feed.recipe do %>
+              <h5><%= feed.recipe.name %></h5>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to t("delete"), personal_collections_recipe_path(feed),
+              method: :delete, data: {confirm: t("confirm")},
+              class: "ui negative large basic button" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

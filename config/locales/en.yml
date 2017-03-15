@@ -6,6 +6,9 @@ en:
   confirm: "You sure ?"
   update_success: "Update success"
   update_fail: "Update fail"
+  delete_success: "Delete success!"
+  delete_fail: "Delete fail!"
+  back_button: "Back"
 
   demo:
     name: "name"
@@ -158,6 +161,7 @@ en:
       zero: "%{count} collection from members."
       one: "%{count} collection from members."
       other: "%{count} collections from members."
+    create_collection: "Create collection"
 
   vote:
     header: "Vote for this recipe."
@@ -179,5 +183,6 @@ en:
       collections: "Collections"
     submit_button: "Save"
     edit_profile_button: "Edit profile"
+
     users:
       title: "Update personal info"

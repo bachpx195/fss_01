@@ -1,0 +1,6 @@
+<% if @collection.errors.any? %>
+  $('#modal-window').html("<%= j render "form" %>");
+<% else %>
+  $('#modal-window').modal('hide');
+  $('#id-<%= @collection.id %>').replaceWith("<%= j render @collection %>");
+<% end %>

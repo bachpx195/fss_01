@@ -6,6 +6,9 @@ vi:
   confirm: "bạn có chắc không?"
   update_success: "Sửa thành công"
   update_fail: "Sửa thất bại"
+  delete_success: "xóa thành công!"
+  delete_fail: "xóa thất bại!"
+  back_button: "Quay lại"
 
   demo:
     name: "Đây là tên"
@@ -155,16 +158,12 @@ vi:
     likes_count: "Lượt thích"
     views_count: "Lượt xem"
     recipes_count: "Công thức"
-    collection_intro:
-      zero: "%{count} collection from members."
-      one: "%{count} collection from members."
-      other: "%{count} collections from members."
+    collection_intro: "%{count} công thức từ các thành viên."
+    create_collection: "Tạo bộ sưu tập"
 
   vote:
     header: "Vote cho công thức"
-    star:
-      one: "%{score} star"
-      other: "%{score} stars"
+    star: "%{score} sao"
     submit: "Vote"
 
   user:
@@ -180,5 +179,6 @@ vi:
       collections: "Bộ sưu tập"
     submit_button: "Lưu"
     edit_profile_button: "Sửa thông tin cá nhân"
+
     users:
       title: "Sửa thông tin cá nhân"
