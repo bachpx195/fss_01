@@ -3,6 +3,8 @@ User.create name: "admin", email: "admin@gmail.com", password: "111111",
 (1..10).each do |i|
   User.create name: "user #{i}", email: "user_#{i}@gmail.com",
     password: "111111", role: 1,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    country: "Việt Nam",
     remote_avatar_url: "http://ibcconsultant.com/wp-content/uploads/2015/08/avatar.png"
 end
 

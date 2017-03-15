@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-  def show
-    @user = User.find_by id: params[:id]
-    authorize @user
-    unless @user
+  before_action :find_user, only: [:show]
 
+  def show
+    @recipes = @user.recipes
+    @collections = @user.collections
+  end
+
+  private
+  def find_user
+    @user = User.find_by id: params[:id]
+    unless @user
       flash[:danger] = t "errors.user_not_found"
       redirect_to root_path
     end

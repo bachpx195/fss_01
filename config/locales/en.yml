@@ -151,3 +151,10 @@ en:
       one: "%{score} star"
       other: "%{score} stars"
     submit: "Vote"
+
+  user:
+    recipes: "Recipes"
+    collections: "Collections"
+    about_me: "About me"
+    country: "Country"
+    followers: "Followers"
