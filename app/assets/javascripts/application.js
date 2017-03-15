@@ -80,3 +80,19 @@ function add_fields(link, association, content) {
   var regexp = new RegExp('new_' + association, 'g')
   $(link).parent().before(content.replace(regexp, new_id));
 }
+
+$(function() {
+  $('#pictureInput').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      img.src = file.target.result;
+      img.style.maxHeight = "100px"
+      img.style.width = "auto"
+      $('#target').html(img);
+    }
+    reader.readAsDataURL(image);
+  });
+});

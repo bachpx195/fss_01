@@ -98,7 +98,7 @@ module ApplicationHelper
     end
   end
 
-  def  add_new_categories_recipes f, association, id
+  def add_new_categories_recipes f, association, id
     if f.categories_recipes.count == 0
       f.class.reflect_on_association(association).klass.new
     else

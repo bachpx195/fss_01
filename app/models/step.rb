@@ -1,5 +1,5 @@
 class Step < ApplicationRecord
-  mount_uploader :images, ImageUploader
+  mount_uploaders :images, ImageUploader
   belongs_to :recipe
 
   validates :content, presence: true
