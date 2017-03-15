@@ -1,13 +1,18 @@
 <%= form_for recipe, html: {multipart: true} do |f| %>
   <div class="form-inputs">
     <div class="form-group">
-      <%= f.label t "recipe.cover" %><br>
-      <%= f.file_field :cover %>
-      <% if f.object.cover? %>
-        <%= image_tag f.object.cover.thumb.url %>
-        <%= f.label :remove_cover %>
-        <%= f.check_box :remove_cover %>
-      <% end %>
+      <div id="pictureInput">
+        <%= f.label t "recipe.cover" %><br>
+        <%= f.file_field :cover %>
+      </div>
+      <br/>
+      <div id="target">
+        <% if f.object.cover? %>
+          <%= image_tag f.object.cover.thumb.url %>
+          <%= f.label :remove_cover %>
+          <%= f.check_box :remove_cover %>
+        <% end %>
+      </div>
     </div>
     <div class="form-group">
       <%= f.label t "recipe.name" %><br>
@@ -25,36 +30,16 @@
         </div>
         <div class="col-md-3">
           <label class="control-label left">
-          <%= t "recipe.duration_minute" %></label>
+            <%= t "recipe.duration_minute" %>
+          </label>
         </div>
       </div>
-    </div>
-    <div class="ui horizontal divider">
-      <%= f.label t "recipe.materials" %>
-    </div>
-    <div class="form-group">
-      <%= f.fields_for :materials do |material| %>
-        <%= render "material_fields", f: material %>
-      <% end %>
-      <p><%= link_to_add_fields t("recipe.add_materials"), f, :materials %></p>
-    </div>
-    <div class="ui horizontal divider">
-      <%= f.label t "recipe.steps" %>
-    </div>
-    <div class="form-group">
-      <%= f.fields_for :steps, html: {multipart: true} do |step| %>
-        <%= render "step_fields", f: step %>
-      <% end %>
-      <p><%= link_to_add_fields t("recipe.add_step"), f, :steps %></p>
     </div>
   </div>
   <br/>
   <div class="form-actions">
     <div class="pull-right">
-      <%= f.button t("recipe.post"), class: "btn btn-primary",
-        value: t("recipe.post"), name: t("recipe.post") %>
-      <%= f.button t("recipe.draft"), class: "btn btn-success",
-        value: t("recipe.draft"), name: t("recipe.draft") %>
+      <%= f.button t("recipe.continue"), class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

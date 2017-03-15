@@ -59,4 +59,50 @@ module ApplicationHelper
   def search_keyword
     params[:q][:name_or_description_cont]
   end
+
+  def active_steps_form params, step
+    if params.nil?
+      case step
+      when Settings.step.default
+        "active"
+      else
+        ""
+      end
+    elsif params == Settings.step.confirm_material
+      case step
+      when Settings.step.confirm_material
+        "active"
+      when Settings.step.default
+        "completed"
+      else
+        ""
+      end
+    elsif params == Settings.step.confirm_step
+      case step
+      when Settings.step.confirm_step
+        "active"
+      when Settings.step.confirm_category
+        ""
+      else
+        "completed"
+      end
+    elsif params == Settings.step.confirm_category
+      case step
+      when Settings.step.confirm_category
+        "active"
+      else
+        "completed"
+      end
+    else
+      "completed"
+    end
+  end
+
+  def  add_new_categories_recipes f, association, id
+    if f.categories_recipes.count == 0
+      f.class.reflect_on_association(association).klass.new
+    else
+      f.categories_recipes.find_by_cate_group id
+    end
+  end
 end

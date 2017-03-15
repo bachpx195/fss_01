@@ -16,3 +16,6 @@ recipe_index_type:
 
 rating:
   max_rating: 5
+  confirm_material: "confirm_material"
+  confirm_step: "confirm_step"
+  confirm_category: "confirm_category"

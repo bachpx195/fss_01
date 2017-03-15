@@ -12,6 +12,10 @@ class Recipe < ApplicationRecord
   scope :order_desc, ->{order created_at: :desc}
   scope :not_draft, ->{where.not status: :draft}
 
+  cattr_accessor :form_steps do
+    %w(confirm_material confirm_step confirm_category)
+  end
+
   after_create :update_status
 
   has_many :collections_recipes, dependent: :destroy
@@ -28,6 +32,8 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :steps, allow_destroy: true,
     reject_if: :all_blank
   accepts_nested_attributes_for :materials, allow_destroy: true,
+    reject_if: :all_blank
+  accepts_nested_attributes_for :categories_recipes, allow_destroy: true,
     reject_if: :all_blank
 
   enum status: {draft: 0, published: 1, edit_request: 2, publish_request: 3}
@@ -47,6 +53,6 @@ class Recipe < ApplicationRecord
 
   private
   def update_status
-    update_attributes status: :published
+    update_attributes status: Recipe.statuses[:draft]
   end
 end

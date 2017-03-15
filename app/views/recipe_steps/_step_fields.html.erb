@@ -1,0 +1,32 @@
+<div class="form-group fields">
+  <div class="row">
+    <div class="col-lg-1">
+      <%= f.label t "step.number_step" %><br>
+      <%= f.number_field :order, class: "form-control" %>
+    </div>
+    <div class="col-lg-8">
+      <%= f.label t "step.content" %><br>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <div class="col-lg-2">
+      <div id="pictureInput">
+        <%= f.label t "step.images" %><br>
+        <%= f.file_field :images, multiple: true %>
+      </div>
+      <br/>
+      <div id="target">
+        <% if f.object.images? %>
+          <% f.object.images.each do |ff| %>
+            <%= image_tag ff.thumb.url %>
+            <%= f.label :remove_images %>
+            <%= f.check_box :remove_images %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-lg-1">
+      <br/>
+      <%= link_to_remove_fields t("recipe.remove"), f %>
+    </div>
+  </div>
+</div>
