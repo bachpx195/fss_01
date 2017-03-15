@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   enum role: {admin: 0, user: 1}
 
-  validates :name, presence: true
+  validates :name, presence: true, length: {minimum: 5}
   validates :email, presence: true
 
   def liked? item

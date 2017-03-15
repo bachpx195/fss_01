@@ -4,6 +4,8 @@ vi:
   delete: "xóa"
   update: "sửa"
   confirm: "bạn có chắc không?"
+  update_success: "Sửa thành công"
+  update_fail: "Sửa thất bại"
 
   demo:
     name: "Đây là tên"
@@ -171,3 +173,12 @@ vi:
     about_me: "Bản thân"
     country: "Quốc gia"
     followers: "Followers"
+
+  personal:
+    sidebar:
+      recipes: "Công thức"
+      collections: "Bộ sưu tập"
+    submit_button: "Lưu"
+    edit_profile_button: "Sửa thông tin cá nhân"
+    users:
+      title: "Sửa thông tin cá nhân"

@@ -4,6 +4,8 @@ en:
   delete: "delete"
   update: "update"
   confirm: "You sure ?"
+  update_success: "Update success"
+  update_fail: "Update fail"
 
   demo:
     name: "name"
@@ -170,3 +172,12 @@ en:
     about_me: "About me"
     country: "Country"
     followers: "Followers"
+
+  personal:
+    sidebar:
+      recipes: "Recipes"
+      collections: "Collections"
+    submit_button: "Save"
+    edit_profile_button: "Edit profile"
+    users:
+      title: "Update personal info"

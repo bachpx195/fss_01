@@ -22,5 +22,12 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :update]
       resources :recipes, only: [:index, :update, :destroy]
     end
+
+    namespace :personal do
+      root "users#show"
+      resources :users, only: [:show, :edit, :update]
+      resources :recipes, only: [:index, :destroy]
+      resources :collections, only: [:index, :show, :destroy]
+    end
   end
 end
