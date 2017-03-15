@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = current_user.recipes.build recipe_params
     if @recipe.save
-      flash[:notice] = t "recipe.success"
+      flash[:success] = t "recipe.success"
       redirect_to recipe_recipe_step_path(@recipe, Settings.step.confirm_material)
     else
       render :new
@@ -32,7 +32,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update_attributes recipe_params
-      flash[:notice] = t "recipe.update_success"
+      flash[:success] = t "recipe.update_success"
       redirect_to recipe_recipe_step_path(@recipe, Settings.step.confirm_material)
     else
       render :edit

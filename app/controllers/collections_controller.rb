@@ -1,8 +1,9 @@
 class CollectionsController < ApplicationController
-  before_action :find_collection, only: [:show]
+  before_action :find_collection, only: :show
 
   def index
-    @collections = Collection.paginate page: params[:page]
+    @collections = Collection.paginate page: params[:page],
+      per_page: Settings.per_page.collections_index
     @collections_count = Collection.count
   end
 

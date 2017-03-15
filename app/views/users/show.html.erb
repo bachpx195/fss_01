@@ -16,19 +16,19 @@
   </div>
   <div class="twelve wide column">
     <div class="ui orange secondary pointing massive menu">
-      <div class="tab-button active item" data-tab="tab-1">
+      <div class="tab-item tab-button active item" data-tab="tab-1">
         <h4><%= t "user.recipes" %> (<%= @recipes.count %>)</h4>
       </div>
-      <div class="tab-button item" data-tab="tab-2">
+      <div class="tab-item tab-button item" data-tab="tab-2">
         <h4><%= t "user.collections" %> (<%= @collections.count %>)</h4>
       </div>
     </div>
-    <div class="ui bottom active tab segment" data-tab="tab-1">
+    <div class="ui bottom active tab tab-item segment" data-tab="tab-1">
       <div class="ui three stackable cards">
         <%= render @recipes %>
       </div>
     </div>
-    <div class="ui bottom tab segment" data-tab="tab-2">
+    <div class="ui bottom tab tab-item segment" data-tab="tab-2">
       <div class="ui three stackable cards">
         <%= render @collections %>
       </div>

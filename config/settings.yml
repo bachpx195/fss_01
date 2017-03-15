@@ -22,3 +22,6 @@ step:
   confirm_material: "confirm_material"
   confirm_step: "confirm_step"
   confirm_category: "confirm_category"
+
+per_page:
+  collections_index: 4
