@@ -68,6 +68,8 @@ en:
     user_not-authorized: "You must be admin to use this"
 
   recipe:
+    recipes: "recipes"
+    recipes_content: "recipes_content"
     create_recipe: "Create Recipe"
     user_recipe_manager: "User recipe manage"
     user_recipe_registed: "User recipe registed"
@@ -75,7 +77,9 @@ en:
     likes_count: "Likes count"
     views_count: "Views count"
     materials: "Materials"
-    steps: "Step"
+    materials_content: "materials_content"
+    steps: "steps"
+    steps_content: "steps_content"
     comments: "Comments"
     name: "Name"
     desc: "Desciption"
@@ -101,6 +105,11 @@ en:
       published: "published"
       edit_request: "edit request"
       publish_request: "publish request"
+    category: "category"
+    category_content: "category_content"
+    back: "back"
+    skip: "skip"
+    continue: "continue"
 
   step:
     content: "Content"
@@ -110,6 +119,9 @@ en:
     name: "Name"
     number: "Number"
     unit: "Unit"
+
+  category:
+    content: "content"
 
   like:
     like_button: "like"

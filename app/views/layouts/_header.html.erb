@@ -27,7 +27,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="<%= "active" if params[:controller] == "recipes" && params[:action] == "new" %>" >
         <%= link_to new_recipe_path do %>
-          <span class="glyphicon glyphicon-upload"></span>
+        <span class="glyphicon glyphicon-upload"></span>
           <%= t "frontend.new_recipe" %>
         <% end %>
       </li>

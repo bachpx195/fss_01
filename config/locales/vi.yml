@@ -67,19 +67,23 @@ vi:
     user_not-authorized: "You must be admin to use this"
 
   recipe:
+    recipes: "Món ăn"
+    recipes_content: "Nội dung món ăn"
     create_recipe: "Tạo công thức"
-    user_recipe_manager: "User recipe manage"
-    user_recipe_registed: "User recipe registed"
+    user_recipe_manager: "Quản lý công thức"
+    user_recipe_registed: "Công thức đã đăng"
     cover: "Ảnh đại diện"
     likes_count: "Lượt thích"
     views_count: "Lượt xem"
     materials: "Nguyên liệu"
-    steps: "Các bước thực hiện"
+    materials_content: "Nguyên liệu cần thiết"
+    steps: "Các bước"
+    steps_content: "Các bước thức hiện"
     comments: "Bình luận"
     name: "Tên"
     desc: "Mô tả"
     duration: "Thời gian"
-    duration_minute: "Duration Minute"
+    duration_minute: "Phút"
     add_step: "Thêm bước"
     add_materials: "Thêm nguyên liệu"
     remove: "Bỏ"
@@ -101,15 +105,24 @@ vi:
       published: "Công khai"
       edit_request: "Yêu cầu sửa"
       publish_request: "Yêu cầu duyêt"
+    category: "Phân loại"
+    category_content: "Phân loại món ăn"
+    back: "Quay lại"
+    skip: "Bỏ qua"
+    continue: "Tiếp tục"
 
   step:
     content: "nội dung"
     number_step: "STT"
+    images: "hình ảnh"
 
   material:
     name: "Tên"
     number: "Số lượng"
     unit: "Đơn vị"
+
+  category:
+    content: "Bước phân loại này sẽ giúp cho người dùng tìm thấy công thức của bạn dễ dàng hơn"
 
   like:
     like_button: "thích"
@@ -140,11 +153,16 @@ vi:
     likes_count: "Lượt thích"
     views_count: "Lượt xem"
     recipes_count: "Công thức"
-    collection_intro: "%{count} bộ sưu tập công thức từ thành viên."
+    collection_intro:
+      zero: "%{count} collection from members."
+      one: "%{count} collection from members."
+      other: "%{count} collections from members."
 
   vote:
     header: "Vote cho công thức"
-    star: "%{score} sao"
+    star:
+      one: "%{score} star"
+      other: "%{score} stars"
     submit: "Vote"
 
   user:
