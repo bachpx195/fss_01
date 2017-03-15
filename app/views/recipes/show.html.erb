@@ -30,10 +30,10 @@
     </h5>
     <div class="ui stacked segment">
       <h4>"<%= @recipe.description %>"</h4>
-      <span>
+      <%= link_to @recipe.user do  %>
         <%= image_tag @recipe.user.avatar, class: "ui mini circular image" %>
         <h6><%= @recipe.user.name %></h6>
-      </span>
+      <% end %>
     </div>
     <div>
       <%= render "shared/vote_button", recipe: @recipe %>

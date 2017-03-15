@@ -1,9 +1,37 @@
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.email %>
-      </h1>
-    </section>
-  </aside>
+<div class="ui stackable grid">
+  <div class="four wide column">
+    <div class="row">
+      <%= image_tag @user.avatar, class: "user-avatar" %>
+      <strong><%= @user.name %></strong>
+    </div>
+    <div class="ui raised stacked segment">
+      <h4><%= t "user.about_me" %></h4>
+      <h5><%= @user.description %></h5>
+      <h4><%= t "user.country" %></h4>
+      <h5><%= @user.country %></h5>
+    </div>
+    <div class="ui raised stacked segment">
+      <h4><%= t "user.followers" %></h4>
+    </div>
+  </div>
+  <div class="twelve wide column">
+    <div class="ui orange secondary pointing massive menu">
+      <div class="tab-button active item" data-tab="tab-1">
+        <h4><%= t "user.recipes" %> (<%= @recipes.count %>)</h4>
+      </div>
+      <div class="tab-button item" data-tab="tab-2">
+        <h4><%= t "user.collections" %> (<%= @collections.count %>)</h4>
+      </div>
+    </div>
+    <div class="ui bottom active tab segment" data-tab="tab-1">
+      <div class="ui three stackable cards">
+        <%= render @recipes %>
+      </div>
+    </div>
+    <div class="ui bottom tab segment" data-tab="tab-2">
+      <div class="ui three stackable cards">
+        <%= render @collections %>
+      </div>
+    </div>
+  </div>
 </div>

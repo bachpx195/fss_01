@@ -29,11 +29,11 @@
     </div>
     <div class="ui stacked segment">
       <h4>"<%= @collection.description %>"</h4>
-      <span>
+      <%= link_to @collection.user do  %>
         <%= image_tag @collection.user.avatar,
           class: "ui mini circular image" %>
         <h6><%= @collection.user.name %></h6>
-      </span>
+      <% end %>
     </div>
   </div>
   <div class="six wide column">

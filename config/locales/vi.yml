@@ -146,3 +146,10 @@ vi:
     header: "Vote cho công thức"
     star: "%{score} sao"
     submit: "Vote"
+
+  user:
+    recipes: "Công thức"
+    collections: "Bộ sưu tập"
+    about_me: "Bản thân"
+    country: "Quốc gia"
+    followers: "Followers"
