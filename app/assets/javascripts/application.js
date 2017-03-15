@@ -70,6 +70,16 @@ $(document).on('change', '.filter_recipes_status', function(){
   });
 });
 
+function show_file_preview(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#form-avatar').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
 function remove_fields(link) {
   $(link).prev('input[type=hidden]').val('1');
   $(link).closest('.fields').hide();

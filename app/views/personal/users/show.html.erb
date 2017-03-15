@@ -1,0 +1,37 @@
+<div class="ui center aligned segment">
+  <%= image_tag current_user.avatar, class: "ui medium right floated rounded image" %>
+  <h1><%= current_user.name %></h1>
+  <h4>"<%= current_user.description %>"</h4>
+  <br>
+  <%= link_to t("personal.edit_profile_button"),
+    edit_personal_user_path(current_user), class: "ui big blue button" %>
+</div>
+<div class="ui divider"></div>
+<div class="ui two column centered grid">
+  <div class="column">
+    <%= link_to personal_recipes_path,
+      class: "ui fluid massive orange button" do %>
+      <div class="statistic">
+        <div class="label">
+          <strong><%= t "personal.sidebar.recipes" %></strong>
+        </div>
+        <div class="value">
+          <%= @recipes_count %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="column">
+    <%= link_to personal_collections_path,
+      class: "ui fluid massive green button" do %>
+      <div class="statistic">
+        <div class="label">
+          <strong><%= t "personal.sidebar.collections" %></strong>
+        </div>
+        <div class="value">
+          <%= @collections_count %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
