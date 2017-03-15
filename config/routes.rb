@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     resources :users, only: :show
     resources :recipes do
       resources :votes, except: [:index, :show, :destroy]
+      resources :recipe_steps, controller: "recipe_steps"
     end
     resources :comments, except: [:index, :show, :new]
+
     resources :likes, only: [:create, :destroy]
     resources :searches, only: [:index]
     resources :collections, only: [:index, :show]

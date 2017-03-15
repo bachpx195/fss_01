@@ -15,15 +15,13 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @recipe.steps.build
-    @recipe.materials.build
   end
 
   def create
     @recipe = current_user.recipes.build recipe_params
     if @recipe.save
       flash[:notice] = t "recipe.success"
-      redirect_to @recipe
+      redirect_to recipe_recipe_step_path(@recipe, Settings.step.confirm_material)
     else
       render :new
     end
@@ -35,7 +33,7 @@ class RecipesController < ApplicationController
   def update
     if @recipe.update_attributes recipe_params
       flash[:notice] = t "recipe.update_success"
-      redirect_to @recipe
+      redirect_to recipe_recipe_step_path(@recipe, Settings.step.confirm_material)
     else
       render :edit
     end
@@ -55,6 +53,8 @@ class RecipesController < ApplicationController
     unless @recipe
       flash[:danger] = t "errors.recipe_not_found"
       redirect_to root_url
+    else
+      authorize @recipe
     end
   end
 
@@ -64,8 +64,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit :name, :cover, :duration,
-      :description, :status, steps_attributes: [:order, :_destroy, :content],
-      materials_attributes: [:name, :_destroy, :number, :unit]
+      :description, :status
   end
 
   def list_recipes

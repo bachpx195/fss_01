@@ -29,7 +29,8 @@ gem "remotipart"
 gem "config"
 gem "carrierwave"
 gem "mini_magick"
-gem 'rails-i18n', '~> 5.0.0'
+gem "rails-i18n", "~> 5.0.0"
+gem "wicked"
 
 group :development, :test do
   gem "byebug", platform: :mri
