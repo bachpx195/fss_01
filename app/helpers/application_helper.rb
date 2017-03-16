@@ -85,4 +85,16 @@ module ApplicationHelper
       f.categories_recipes.find_by_cate_group id
     end
   end
+
+  def add_new_collections_recipes f, association, id
+    if f.collections_recipes.count == 0 || check_collection_not_exist?(f, id)
+      f.class.reflect_on_association(association).klass.new
+    else
+      f.collections_recipes.find_by_collection id
+    end
+  end
+
+  def check_collection_not_exist? f, id
+    !f.collections_recipes.exists? collection_id: id
+  end
 end

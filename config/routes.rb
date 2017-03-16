@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :recipes do
       resources :votes, except: [:index, :show, :destroy]
       resources :recipe_steps, controller: "recipe_steps"
+      resources :collections, only: [:new, :create], controller: "collections"
     end
     resources :comments, except: [:index, :show, :new]
 
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
       resources :users, only: [:show, :edit, :update]
       resources :recipes, only: [:index]
       resources :collections
-      resources :collections_recipes, only: [:destroy]
+      resources :collections_recipes, only: [:destroy, :show, :update]
     end
   end
 end

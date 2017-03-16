@@ -38,6 +38,8 @@ class Recipe < ApplicationRecord
     reject_if: :all_blank
   accepts_nested_attributes_for :categories_recipes, allow_destroy: true,
     reject_if: :all_blank
+  accepts_nested_attributes_for :collections_recipes, allow_destroy: true,
+    reject_if: :all_blank
 
   enum status: {draft: 0, published: 1, edit_request: 2, publish_request: 3}
 

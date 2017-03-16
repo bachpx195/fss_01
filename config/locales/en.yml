@@ -121,6 +121,7 @@ en:
   step:
     content: "Content"
     number_step: "Number step"
+    images: "images"
 
   material:
     name: "Name"
@@ -164,6 +165,9 @@ en:
       one: "%{count} collection from members."
       other: "%{count} collections from members."
     create_collection: "Create collection"
+    modal_header: "modal_header"
+    add: "add"
+    add_collection: "add_collection"
 
   vote:
     header: "Vote for this recipe."

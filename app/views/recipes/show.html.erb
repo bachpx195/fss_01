@@ -38,9 +38,7 @@
     </div>
     <div class="ui large compact yellow segment">
       <%= render "shared/vote_button", recipe: @recipe %>
-      <%= link_to "#" do %>
-        <i class="bookmark yellow big icon-link icon"></i>
-      <% end %>
+      <%= render "shared/add_recipe_to_collection_button", recipe: @recipe %>
       <span id="recipe-<%= @recipe.id %>-likes-button">
         <%= render "likes/like_button", likeable_item: @recipe %>
       </span>

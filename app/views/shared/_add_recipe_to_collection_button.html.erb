@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <%= link_to personal_collections_recipe_path(recipe), remote: true,
+    data: {toggle: "modal", target: "#colleciton-recipe-modal"} do %>
+    <i class="bookmark yellow big icon-link icon"></i>
+  <% end %>
+<% end %>
