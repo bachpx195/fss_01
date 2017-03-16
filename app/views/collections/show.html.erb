@@ -1,9 +1,9 @@
 <div class="ui stackable centered grid">
   <div class="ten wide column">
-    <h3><%= @collection.name %></h3>
+    <h1><%= @collection.name %></h1>
     <div class="ui small statistics">
       <div class="statistic">
-        <div class="value">
+        <div class="value" id="collection-<%= @collection.id %>-likes-count">
           <%= @collection.likes_count %>
         </div>
         <div class="label">
@@ -34,6 +34,11 @@
           class: "ui mini circular image" %>
         <h6><%= @collection.user.name %></h6>
       <% end %>
+    </div>
+    <div class="ui massive compact red segment">
+      <span id="collection-<%= @collection.id %>-likes-button">
+        <%= render "likes/like_button", likeable_item: @collection %>
+      </span>
     </div>
   </div>
   <div class="six wide column">

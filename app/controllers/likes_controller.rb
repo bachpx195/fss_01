@@ -3,15 +3,12 @@ class LikesController < ApplicationController
 
   def create
     @like = current_user.likes.build likes_params
-    if @like.save
-      respond_to do |format|
-        format.js {
-          @likeable_item = @like.likeable
-        }
-      end
-    else
-      flash[:warning] = t "errors.user_not_found"
-      redirect_to root_url
+    unless @likeable_item = @like.likeable
+      flash[:warning] = t "errors.something_wrong"
+      redirect_to :back
+    end
+    unless current_user.find_liked_by @likeable_item
+      @like.save
     end
   end
 
@@ -20,12 +17,9 @@ class LikesController < ApplicationController
     if @like
       @likeable_item = @like.likeable
       @like.destroy
-      respond_to do |format|
-        format.js
-      end
     else
       flash[:warning] = t "errors.something_wrong"
-      redirect_to root_url
+      redirect_to :back
     end
   end
 

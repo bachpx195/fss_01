@@ -1,2 +1,4 @@
-$("#<%= @likeable_item.class.name.downcase %>-<%= @likeable_item.id %>")
-  .html("<%= j render @likeable_item %>");
+$('#<%= @likeable_item.class.name.downcase %>-<%= @likeable_item.id %>-likes-button')
+  .html("<%= j render "likes/like_button", likeable_item: @likeable_item %>");
+$('#<%= @likeable_item.class.name.downcase %>-<%= @likeable_item.id %>-likes-count')
+  .html("<%= @likeable_item.likes_count %>");

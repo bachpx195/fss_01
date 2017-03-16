@@ -71,6 +71,7 @@ en:
     something_wrong: "Something Wrong @@"
     cant_destroy_comment: "Cant delete comment!"
     user_not-authorized: "You must be admin to use this"
+    item_deleted: "Item deleted."
 
   recipe:
     recipes: "recipes"

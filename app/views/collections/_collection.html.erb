@@ -8,11 +8,16 @@
   </div>
   <div class="content">
     <span class="right floated">
-      <i class="heart outline like icon"></i>
-      <%= collection.likes_count %> <%= t "collection.likes_count" %>
+      <span id="collection-<%= collection.id %>-likes-count">
+        <%= collection.likes_count %>
+      </span>
+      <%= t "collection.likes_count" %>
+      <span id="collection-<%= collection.id %>-likes-button">
+        <%= render "likes/like_button", likeable_item: collection %>
+      </span>
     </span>
     <span class="left floated">
-      <i class="comment icon"></i>
+      <i class="comment outline big icon"></i>
       <%= collection.views_count %> <%= t "collection.views_count" %>
     </span>
   </div>

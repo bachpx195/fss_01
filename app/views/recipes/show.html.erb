@@ -24,7 +24,10 @@
     </h1>
     <%= render "shared/vote_stars", score: @recipe.votes_average %>
     <h5>
-      <%= @recipe.likes_count %> <%= t "recipe.likes_count" %>
+      <span id="recipe-<%= @recipe.id %>-likes-count">
+        <%= @recipe.likes_count %>
+      </span>
+      <%= t "recipe.likes_count" %>
       <span> | </span>
       <%= @recipe.views_count %> <%= t "recipe.views_count" %>
     </h5>
@@ -35,20 +38,14 @@
         <h6><%= @recipe.user.name %></h6>
       <% end %>
     </div>
-    <div>
+    <div class="ui large compact yellow segment">
       <%= render "shared/vote_button", recipe: @recipe %>
-      <%= link_to "#",
-        class: "ui circular icon massive like-recipe button" do %>
-        <i class="empty heart icon"></i>
+      <%= link_to "#" do %>
+        <i class="bookmark yellow big icon-link icon"></i>
       <% end %>
-      <%= link_to "#",
-        class: "ui circular yellow icon massive category-recipe button" do %>
-        <i class="bookmark icon"></i>
-      <% end %>
-      <%= link_to "#",
-        class: "ui circular blue icon massive share-recipe button" do %>
-        <i class="facebook icon"></i>
-      <% end %>
+      <span id="recipe-<%= @recipe.id %>-likes-button">
+        <%= render "likes/like_button", likeable_item: @recipe %>
+      </span>
     </div>
   </div>
   <div class="row">

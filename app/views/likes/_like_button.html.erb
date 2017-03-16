@@ -1,0 +1,17 @@
+<% if user_signed_in? && liked_item = current_user.find_liked_by(likeable_item) %>
+  <%= link_to liked_item, remote: true,
+    method: :delete, class: "icon-link" do %>
+    <i class="heart red big icon"></i>
+  <% end %>
+<% else %>
+  <%= link_to "#", class: "like-button icon-link" do %>
+    <i class="heart empty big icon"></i>
+  <% end %>
+  <%= form_for :like, url: likes_path, method: :post, remote: true,
+    class: "invisible-form" do |f| %>
+    <%= f.hidden_field :likeable_id,
+      value: likeable_item.id, class: "invisible-form" %>
+    <%= f.hidden_field :likeable_type,
+      value: likeable_item.class.name, class: "invisible-form" %>
+  <% end %>
+<% end %>
