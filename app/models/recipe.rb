@@ -6,11 +6,14 @@ class Recipe < ApplicationRecord
       .having "count(distinct categories_recipes.category_id) = ?",
         category_ids.count
   }
+  scope :not_draft, ->{where.not status: :draft}
+  scope :sort_by_time, ->{order created_at: :desc}
+  scope :sort_by_view, ->{order views_count: :desc}
+  scope :sort_by_like, ->{order likes_count: :desc}
+  scope :sort_by_vote, ->{order votes_average: :desc, votes_count: :desc}
 
   belongs_to :user
   mount_uploader :cover, ImageUploader
-  scope :order_desc, ->{order created_at: :desc}
-  scope :not_draft, ->{where.not status: :draft}
 
   cattr_accessor :form_steps do
     %w(confirm_material confirm_step confirm_category)
