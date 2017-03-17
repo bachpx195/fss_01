@@ -27,7 +27,6 @@ vi:
     app_name: "FOOD SOCIAL SYSTEM"
     design_by: "Thiết kế bởi"
     team: "FRAMGIA-TEAM"
-    personal: "Trang cá nhân"
 
   home:
     favorite_recipes: "Món ăn được xem nhiều nhất"
@@ -71,7 +70,7 @@ vi:
     something_wrong: "Có lỗi xảy ra !"
     cant_destroy_comment: "Không xóa được comment!"
     user_not-authorized: "You must be admin to use this"
-    item_deleted: "Mục này đã bị xóa."
+    item_deleted: "Item deleted."
 
   recipe:
     recipes: "Món ăn"
@@ -162,6 +161,9 @@ vi:
     recipes_count: "Công thức"
     collection_intro: "%{count} công thức từ các thành viên."
     create_collection: "Tạo bộ sưu tập"
+    modal_header: "Bộ sưu tập của tôi"
+    add: "Thêm mới"
+    add_collection  : "Thêm vào bộ sưu tập"
 
   vote:
     header: "Vote cho công thức"

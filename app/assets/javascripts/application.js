@@ -112,3 +112,7 @@ $(function() {
     reader.readAsDataURL(image);
   });
 });
+
+$(document).on('change', 'input:checkbox', function(){
+  $(this).next('input[type=hidden]').val(!$(this).prop('checked'));
+});

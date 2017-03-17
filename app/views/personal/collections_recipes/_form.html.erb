@@ -1,0 +1,40 @@
+<div class="modal-dialog">
+  <div class="modal-header">
+    <h3><%= t "collection.modal_header" %>
+      <div class="pull-right">
+        <%= link_to t("collection.add"), new_recipe_collection_path(recipe),
+          remote: true, class: "ui green button" %>
+      </div>
+    </h3>
+  </div>
+  <%= form_for @recipe, url: personal_collections_recipe_path(recipe),
+    method: :put, remote: :true do |f| %>
+    <div class="modal-body">
+      <div class="ui stackable centered grid">
+        <div class="seven wide column">
+          <div class="ui segment">
+            <%= image_tag recipe.cover, class: "ui medium image" %>
+          </div>
+        </div>
+        <div class="nine wide column">
+          <% collections.each do |collection| %>
+            <div class="field">
+              <%= f.fields_for :collections_recipes,
+                add_new_collections_recipes(f.object,
+                :collections_recipes, collection.id) do |ff| %>
+                <%= ff.check_box :collection_id, {}, collection.id %>
+                <%= ff.hidden_field :_destroy,
+                  value: check_collection_not_exist?(f.object, collection.id) %>
+              <% end %>
+              <%= f.label collection.name %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="modal-header">
+      <%= f.submit t("collection.add_collection"),
+        class: "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
+</div>
