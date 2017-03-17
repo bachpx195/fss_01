@@ -1,12 +1,12 @@
 <div class="comment" id="comment-<%= comment.id %>">
   <a class="avatar">
-    <img src="https://image.flaticon.com/icons/png/128/338/338481.png">
+    <%= image_tag comment.user.avatar, class: "ui avatar image" %>
   </a>
   <div class="content">
     <%= link_to comment.user.name, comment.user, class: "author" %>
     <div class="metadata">
       <span class="date">
-        <%= time_ago_in_words comment.created_at %>
+        <%= time_ago_in_words comment.updated_at %>
       </span>
       <span class="like">
         <i class="heart icon"></i>
@@ -19,20 +19,26 @@
           <%= render "likes/like_button", likeable_item: comment %>
         </span>
       <% end %>
+    </div>
+    <div class="text">
+      <%= simple_format comment.content %>
+    </div>
+    <% if comment.images.any? %>
+      <div class="ui small images">
+        <div class="ui compact segment">
+          <% comment.images.each do |image| %>
+            <%= image_tag image, class: "ui image" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div class="actions">
       <% if policy(comment).edit? %>
         <%= link_to t("update"), edit_comment_path(comment), remote: true %>
       <% end %>
       <% if policy(comment).destroy? %>
         <%= link_to t("delete"), comment, method: :delete, remote: true,
           data: {confirm: t("confirm")} %>
-      <% end %>
-    </div>
-    <div class="text">
-      <%= comment.content %>
-    </div>
-    <div class="ui small images">
-      <% comment.images.each do |image| %>
-        <%= image_tag image, class: "ui image" %>
       <% end %>
     </div>
   </div>

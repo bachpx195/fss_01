@@ -30,8 +30,9 @@ $(document).on('click', '.like-button', function(e){
   $(this).next('form').submit();
 });
 
-$(document).on('click', '.tab-button', function(){
-  $('.active').removeClass('active');
+$(document).on('click', '.tab-button', function(e){
+  e.preventDefault();
+  $('.tab-item.active').removeClass('active');
   let tabname = $(this).attr('data-tab');
   $('[data-tab="'+ tabname +'"]').addClass('active');
 });

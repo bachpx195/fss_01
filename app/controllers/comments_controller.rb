@@ -6,30 +6,19 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build comment_params
     @new_comment = @comment.recipe.comments.build if @comment.save
-    respond_to do |format|
-      format.js
-    end
   end
 
   def edit
-    respond_to do |format|
-      format.js
-    end
   end
 
   def update
     if @comment.update_attributes comment_params
       @new_comment = @comment.recipe.comments.build
     end
-    respond_to do |format|
-      format.js
-    end
   end
 
   def destroy
-    respond_to do |format|
-      format.js
-    end
+    @comment.destroy
   end
 
   private

@@ -1,3 +1,7 @@
-<li>
-  <%= step.content %>
-</li>
+<span class="ui red big ribbon label"><%= step.order %></span>
+<h3><%= simple_format step.content %></h3>
+<% if step.images.any? %>
+  <% step.images.each do |image| %>
+    <%= image_tag image, class: "ui large step-image image" %>
+  <% end %>
+<% end %>
