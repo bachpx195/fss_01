@@ -1,0 +1,27 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title"><%= t "admin.category_group.edit_category_group" %></h4>
+    </div>
+    <div class="modal-body">
+      <%= form_for @category_group, url: admin_category_group_path(@category_group.id) do |f| %>
+        <table class="table table-striped">
+          <tr>
+            <td><%= f.label :name, t("admin.category_group.category_group_name") %></td>
+            <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= f.submit t("admin.category_group.submit") %></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">
+        <%= t "admin.category_group.close" %>
+      </button>
+    </div>
+  </div>
+</div>

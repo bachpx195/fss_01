@@ -5,6 +5,8 @@
     <table class="table table-striped">
       <tr>
         <th><%= t "admin.users.name_title" %></th>
+        <th><%= t "admin.users.email_title" %></th>
+        <th><%= t "admin.users.country_title" %></th>
         <th><%= t "admin.users.change_role_title" %></th>
       </tr>
       <% @users.each do |user| %>
@@ -12,8 +14,10 @@
           <td>
             <%= link_to user.name, user, id: user.id, class: "user_alert" %>
           </td>
+          <td><%= user.email %></td>
+          <td><%= user.country %></td>
           <td>
-            <% unless user.admin? %>
+            <% unless current_user == user %>
               <%= select_tag t("admin.users.role"),
                 options_for_select(@roles, user.role), class: "user_role" %>
             <% end %>

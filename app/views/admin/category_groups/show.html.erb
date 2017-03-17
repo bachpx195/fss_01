@@ -1,0 +1,22 @@
+<h1><%= t "admin.category_group.all_categories" %></h1>
+<table class="table table-striped">
+  <tr>
+    <th><%= t "admin.category_group.name" %></th>
+  </tr>
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= link_to t("admin.category_group.edit"),
+        edit_admin_category_group_category_path(category.category_group_id, category.id),
+        class: "btn btn-info", remote: true %></td>
+      <td><%= link_to t("admin.category_group.delete"),
+        admin_category_group_category_path(category.category_group_id, category.id),
+        class: "btn btn-danger", data: {confirm: t("admin.category_group.action_confirm")},
+          method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to t("admin.category_group.add_category"),
+  new_admin_category_group_category_path("#{params[:id]}"),
+  class: "btn btn-info", remote: true %>
+<div class="modal fade" id="addcateModal" role="dialog"></div>
