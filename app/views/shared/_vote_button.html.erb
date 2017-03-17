@@ -1,13 +1,13 @@
 <% if user_signed_in? && voted_item = current_user.find_voted_by(recipe) %>
   <%= link_to edit_recipe_vote_path(recipe, voted_item), remote: true,
     data: {toggle: "modal", target: "#vote-modal"},
-    class: "ui circular icon blue massive vote-recipe button" do %>
-    <i class="empty star icon"></i>
+      class: "vote-recipe icon-link button" do %>
+    <i class="star big icon"></i>
   <% end %>
 <% else %>
   <%= link_to new_recipe_vote_path(recipe), remote: true,
     data: {toggle: "modal", target: "#vote-modal"},
-    class: "ui circular icon massive vote-recipe button" do %>
-    <i class="empty star icon"></i>
+      class: "vote-recipe icon-link button" do %>
+    <i class="star empty big icon"></i>
   <% end %>
 <% end %>

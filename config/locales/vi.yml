@@ -70,6 +70,7 @@ vi:
     something_wrong: "Có lỗi xảy ra !"
     cant_destroy_comment: "Không xóa được comment!"
     user_not-authorized: "You must be admin to use this"
+    item_deleted: "Mục này đã bị xóa."
 
   recipe:
     recipes: "Món ăn"

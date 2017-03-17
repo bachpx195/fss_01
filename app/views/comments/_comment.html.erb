@@ -15,9 +15,9 @@
         </span>
       </span>
       <% if user_signed_in? %>
-        <div class="comment-<%= comment.id %>-like-form">
-          <%= render "users/like_form", likeable_item: comment %>
-        </div>
+        <span id="comment-<%= comment.id %>-likes-button">
+          <%= render "likes/like_button", likeable_item: comment %>
+        </span>
       <% end %>
       <% if policy(comment).edit? %>
         <%= link_to t("update"), edit_comment_path(comment), remote: true %>

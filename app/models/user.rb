@@ -18,10 +18,6 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {minimum: 5}
   validates :email, presence: true
 
-  def liked? item
-    likes.find_by likeable: item
-  end
-
   def find_liked_by liked_item
     likes.find_by likeable: liked_item
   end

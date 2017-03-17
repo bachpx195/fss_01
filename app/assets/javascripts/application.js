@@ -25,6 +25,11 @@ $(document).on('turbolinks:load', function(){
   $('.ui.rating').rating('disable');
 });
 
+$(document).on('click', '.like-button', function(e){
+  e.preventDefault();
+  $(this).next('form').submit();
+});
+
 $(document).on('click', '.tab-button', function(){
   $('.active').removeClass('active');
   let tabname = $(this).attr('data-tab');
