@@ -1,4 +1,6 @@
 class Collection < ApplicationRecord
+  scope :sort_by_view, ->{order views_count: :desc}
+
   mount_uploader :cover, ImageUploader
 
   belongs_to :user

@@ -3,6 +3,9 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, omniauth_providers: [:facebook]
 
+  scope :sort_by_recipes, -> {joins(:recipes)
+    .group("recipes.user_id").order("count(recipes.user_id) desc")}
+
   mount_uploader :avatar, ImageUploader
 
   has_many :recipes, dependent: :destroy

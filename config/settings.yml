@@ -7,6 +7,10 @@ frontend:
 
   home_page: "home"
 
+  recipes: 6
+  collections: 5
+  users: 4
+
 recipe_form:
   default_step: "1"
 
@@ -25,3 +29,6 @@ step:
 
 per_page:
   collections_index: 8
+
+share:
+  collection_description_length: 50

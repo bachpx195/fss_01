@@ -4,6 +4,18 @@
 </div>
 <br>
 <div class="row">
-  <%= render "shared/favorite_recipes" %>
+  <div class="col-lg-9">
+    <%= render "shared/favorite_recipes", recipes: @home_page.recipes %>
+    <div id="padding-bottom"></div>
+    <%= render "shared/category_recipes",
+      category_groups: @home_page.category_groups %>
+    <%= render "shared/top_user", users: @home_page.users %>
+  </div>
+  <div class="col-lg-3">
+    <%= render "shared/favorite_collections",
+      collections: @home_page.collections %>
+  </div>
 </div>
-<br>
+<%= render "shared/static", users_count: @home_page.users_count,
+  collections_count: @home_page.collections_count,
+  recipes_count: @home_page.recipes_count %>
