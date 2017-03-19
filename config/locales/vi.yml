@@ -126,9 +126,11 @@ vi:
     name: "Tên"
     number: "Số lượng"
     unit: "Đơn vị"
+    select_unit: "-- Chọn đơn vị --"
 
   category:
     content: "Bước phân loại này sẽ giúp cho người dùng tìm thấy công thức của bạn dễ dàng hơn"
+    home: "Từ điển nội trợ"
 
   like:
     like_button: "thích"
@@ -164,6 +166,7 @@ vi:
     modal_header: "Bộ sưu tập của tôi"
     add: "Thêm mới"
     add_collection  : "Thêm vào bộ sưu tập"
+    favorite_collections: "Bộ sưu tập hay"
 
   vote:
     header: "Vote cho công thức"
@@ -176,6 +179,9 @@ vi:
     about_me: "Bản thân"
     country: "Quốc gia"
     followers: "Followers"
+    view_my_profile: "Hồ sơ của tôi"
+    users: "Người dùng"
+    home: "Top đầu bếp"
 
   personal:
     sidebar:

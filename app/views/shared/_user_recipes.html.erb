@@ -21,7 +21,7 @@
             <td>
               <%= link_to t("recipe.edit"), edit_recipe_path(f) %>
               &nbsp &nbsp &nbsp
-              <%= link_to t("recipe.remove"), f, method: :delete,
+              <%= link_to t("recipe.remove"), personal_recipe_path(f, type: @type), method: :delete,
                 data: {confirm: t("recipe.destoy_confirm")},
                 remote: :true, class: "destroy-recipe"%>
             </td>

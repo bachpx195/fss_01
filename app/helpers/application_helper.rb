@@ -32,14 +32,6 @@ module ApplicationHelper
     str = like_str + comment_str + star_str
   end
 
-  def gravatar_for user, option = {size: 80}
-    gravatar_id = Digest::MD5::hexdigest user.email.downcase
-    size = option[:size]
-    gravatar_url = "https://secure.gravatar.com/avatar/
-      #{gravatar_id}?s=#{size}"
-    image_tag gravatar_url, alt: user.name, class: "gravatar"
-  end
-
   def active_steps_form params, step
     if params.nil?
       case step
@@ -96,5 +88,21 @@ module ApplicationHelper
 
   def check_collection_not_exist? f, id
     !f.collections_recipes.exists? collection_id: id
+  end
+
+  def add_new_material_recipes f, association, id
+    if f.materials.count == 0
+      f.class.reflect_on_association(association).klass.new
+    else
+      f.materials.find_by recipe_id: id
+    end
+  end
+
+  def add_new_step_recipes f, association, id
+    if f.count == 0
+      f.class.reflect_on_association(association).klass.new
+    else
+      f.find_by recipe_id: id
+    end
   end
 end

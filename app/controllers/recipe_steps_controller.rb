@@ -18,7 +18,9 @@ class RecipeStepsController < ApplicationController
         @recipe.update_attributes status: Recipe.statuses[:draft]
       end
     end
-    @recipe.update_attributes step_recipe_params
+    if params[:recipe]
+      @recipe.update_attributes step_recipe_params
+    end
     render_wizard @recipe
   end
 

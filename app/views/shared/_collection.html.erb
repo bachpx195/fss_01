@@ -1,0 +1,21 @@
+<div class="ui card">
+  <%= link_to collection do %>
+    <%= image_tag collection.cover, class: "ui small circular centered image" %>
+  <% end %>
+  <div class="content">
+    <%= link_to collection.name, collection, class: "header" %>
+    <div class="meta">
+      <span class="left floated">
+        <i class="payment outline small icon"></i>
+        <%= collection.collections_recipes.count %> <%= t "recipe.recipes" %>
+      </span>
+      <span class="right floated">
+        <i class="unhide outline small icon"></i>
+        <%= collection.views_count %> <%= t "recipe.views_count" %>
+      </span>
+    </div>
+    <div class="description">
+      <%= truncate collection.description, length: 50 %>
+    </div>
+  </div>
+</div>

@@ -16,7 +16,7 @@
           <strong><%= t "personal.sidebar.recipes" %></strong>
         </div>
         <div class="value">
-          <%= @recipes_count %>
+          <%= @recipes_count.count %>
         </div>
       </div>
     <% end %>
@@ -29,7 +29,7 @@
           <strong><%= t "personal.sidebar.collections" %></strong>
         </div>
         <div class="value">
-          <%= @collections_count %>
+          <%= @collections.count %>
         </div>
       </div>
     <% end %>

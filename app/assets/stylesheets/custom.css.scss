@@ -61,15 +61,6 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
-
 .cover-image {
   height: 200px;
 }
@@ -84,4 +75,14 @@ aside {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+}
+
+.container {
+  .panel-default {
+    border: none;
+  }
+}
+
+#read-more {
+  padding-left: 0px;
 }

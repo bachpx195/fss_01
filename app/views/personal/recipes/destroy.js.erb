@@ -1,0 +1,4 @@
+$('#sidebar').html('<%= j render "personal/personal_sidebar",
+  recipes_count: @recipes_count %>');
+
+$('#table').html('<%= j render "shared/user_recipes", recipes: @recipes, type: @type %>');

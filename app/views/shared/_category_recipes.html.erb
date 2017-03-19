@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <h3 class="panel-heading"><%= t "category.home" %></h3>
+</div>
+<div class="row">
+  <div class="spacer10"></div>
+  <% category_groups.each do |cate_group| %>
+    <div class="col-lg-3">
+      <div class="list-group">
+        <h4 class="list-group-item"><%= cate_group.name %></h4>
+        <% cate_group.categories.each do |cate| %>
+          <%= link_to searches_path(q: {name_or_description_cont: ""},
+            sort_by: "time", categories: {"#{cate_group.id}" => "#{cate.id}"}),
+            class: "list-group-item" do %>
+            <p><%= cate.name%> <span class="badge pull-right"><%= cate.categories_recipes.count %></span></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
