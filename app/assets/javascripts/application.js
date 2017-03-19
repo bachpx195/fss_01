@@ -25,6 +25,12 @@ $(document).on('turbolinks:load', function(){
   $('.ui.rating').rating('disable');
 });
 
+$(document).ajaxError(function(event, xhr){
+  if (xhr.status == 401) {
+    window.location = '/users/sign_in';
+  }
+});
+
 $(document).on('click', '.like-button', function(e){
   e.preventDefault();
   $(this).next('form').submit();

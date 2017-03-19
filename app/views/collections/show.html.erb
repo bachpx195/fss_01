@@ -50,12 +50,13 @@
     <div class="ui red inverted one item fluid menu">
       <div class="item">
         <h4>
-          <%= t "collection.recipes_count" %> (<%= @collection.recipes.count %>)
+          <%= t "collection.recipes_count" %>
+          (<%= @collection.recipes.published.count %>)
         </h4>
       </div>
     </div>
   </div>
   <div class="ui four stackable doubling cards">
-    <%= render @collection.recipes %>
+    <%= render @collection.recipes.published %>
   </div>
 </div>
