@@ -1,5 +1,7 @@
 <div class="ui fluid card">
-  <%= image_tag recipe.cover, class: "cover-image" %>
+  <%= link_to recipe, class: "image" do %>
+    <%= image_tag recipe.cover, class: "cover-image" %>
+  <% end %>
   <div class="content">
     <%= link_to recipe.name, recipe, class: "header" %>
     <div class="meta">

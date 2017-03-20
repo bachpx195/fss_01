@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show]
 
   def show
-    @recipes = @user.recipes
+    @recipes = @user.recipes.published
     @collections = @user.collections
   end
 

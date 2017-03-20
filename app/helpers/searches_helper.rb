@@ -16,6 +16,6 @@ module SearchesHelper
   end
 
   def search_keyword
-    params[:q][:name_or_description_cont]
+    params[:q][:name_or_description_cont] if params.has_key?(:q)
   end
 end
