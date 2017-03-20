@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-lg-8">
+    <h3><%= t "collection.favorite_collections" %></h3>
+  </div>
+  <div class="col-lg-4" id="read-more">
+    <br>
+    <%= link_to t("home.read_more"),
+      collections_path, class: "btn btn-danger" %>
+  </div>
+</div>
+<br>
+<div class="ui items">
+  <% collections.each_with_index do |collection, index| %>
+    <%= render "shared/collection", collection: collection %>
+  <% end %>
+</div>

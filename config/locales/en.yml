@@ -130,6 +130,7 @@ en:
 
   category:
     content: "content"
+    home: "home category"
 
   like:
     like_button: "like"
@@ -168,6 +169,7 @@ en:
     modal_header: "modal_header"
     add: "add"
     add_collection: "add_collection"
+    favorite_collections: "favorite collections"
 
   vote:
     header: "Vote for this recipe."
@@ -182,6 +184,8 @@ en:
     about_me: "About me"
     country: "Country"
     followers: "Followers"
+    user: "User"
+    home: "Top"
 
   personal:
     sidebar:

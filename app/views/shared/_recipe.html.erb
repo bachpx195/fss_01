@@ -1,38 +1,27 @@
-<% if type == Settings.frontend.favorite_recipes %>
-  <div class="thumbnail">
-    <div class="caption row">
-      <div class="col-md-12">
-        <%= image_tag "/demo/mon-an.jpg",
-          class: "img-responsive recipe-img" %>
-        <h3><%= link_to t("demo.name") %>
-          <a href="#" class="btn btn-primary pull-right"
-            role="button"><%= t "home.guide" %></a></h3>
-        <span class="pull-left">
-          <% for i in 1..5 %>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-          <% end %>
-        </span>
-        <span class="pull-right">
-          <span class="glyphicon glyphicon-eye-open"
-            aria-hidden="true"></span> <% t "demo.view" %>
-        </span>
-      </div>
+<div class="ui fluid card">
+  <%= image_tag recipe.cover, class: "cover-image" %>
+  <div class="content">
+    <%= link_to truncate(recipe.name, length: 20), recipe, class: "header" %>
+    <div class="meta">
+      <div class="ui star large rating"
+        data-max-rating="<%= Settings.rating.max_rating %>"
+        data-rating="<%= recipe.votes_average %>"></div>
     </div>
   </div>
-<% elsif type == Settings.frontend.tip_recipes %>
-    <div class="thumbnail">
-      <%= image_tag "/demo/meo-vat.jpg",
-        class: "img-responsive recipe-img" %>
-      <div class="caption">
-        <h4><%= link_to t("demo.name") %></h4>
-        <span class="pull-left">
-          <a href="#" class="btn btn-primary pull-right"
-            role="button"><%= t "home.guide" %></a>
-        </span>
-        <span class="pull-right">
-          <span class="glyphicon glyphicon-eye-open"
-            aria-hidden="true"></span> <% t "demo.view" %>
-        </span>
-      </div>
-    </div>
-<% end %>
+  <div class="content">
+    <span class="right floated">
+      <span id="recipe-<%= recipe.id %>-likes-count">
+        <%= recipe.likes_count %>
+      </span>
+      <%= t "recipe.likes_count" %>
+      <span id="recipe-<%= recipe.id %>-likes-button">
+        <%= render "likes/like_button", likeable_item: recipe %>
+      </span>
+    </span>
+    <span class="left floated">
+      <i class="unhide outline big icon"></i>
+      <%= recipe.views_count %> <%= t "recipe.views_count" %>
+    </span>
+  </div>
+</div>
+<br>
