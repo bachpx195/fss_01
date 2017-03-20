@@ -19,7 +19,7 @@
           <td>
             <% unless current_user == user %>
               <%= select_tag t("admin.users.role"),
-                options_for_select(@roles, user.role), class: "user_role" %>
+                options_for_select(@roles, user.role), class: "user_role", data: user.id %>
             <% end %>
           </td>
         </tr>

@@ -44,10 +44,10 @@ $(document).on('click', '.tab-button', function(e){
 });
 
 $(document).on('change', '.user_role', function(){
-  var test = $(this).parent().prev().children().attr('id');
+  var data = $(this).attr('data');
   index = $('.user_role option:selected').val();
   $.ajax({
-    url: "users/" + test,
+    url: "users/" + data,
     type: "PUT",
     dataType: "script",
     data: {"key": index},

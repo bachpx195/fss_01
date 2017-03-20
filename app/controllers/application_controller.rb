@@ -27,4 +27,12 @@ class ApplicationController < ActionController::Base
     flash[:error] = t "notification.not_authorized"
     redirect_to request.referrer || root_path
   end
+
+  def after_sign_in_path_for resource
+    if resource.role == "admin"
+      admin_root_path
+    else
+      request.env['omniauth.origin'] || root_path
+    end
+  end
 end
