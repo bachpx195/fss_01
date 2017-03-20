@@ -22,6 +22,9 @@ Rails.application.routes.draw do
       root "dashboard#home"
       resources :users, only: [:index, :update]
       resources :recipes, only: [:index, :update, :destroy]
+      resources :category_groups do
+        resources :categories
+      end
     end
 
     namespace :personal do

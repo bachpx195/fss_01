@@ -44,25 +44,53 @@ en:
     side_bar:
       users: "Users (demo)"
       recipes: "Recipes (demo)"
-      report: "Roportes (demo)"
+      category: "Category (demo)"
     dash_board:
       content: "Temporary content for dashboard page"
     users:
       name_title: "Name"
+      email_title: "Email"
+      country_title: "Country"
       change_role_title: "Change Role"
       change_success: "Update Success!"
       title_user: "All Users"
       title_recipe: "All Recipes"
       content: ""
       role: "Role"
-
     recipes:
       id: "ID"
       recipename: "Recipename"
       author: "Author"
       status: "Status"
       delete_confirm: "Are you sure?"
+      delete_recipes: "Delete Recipe"
+    categories:
+      all_category: "All Category"
+      category_group_id: "Category Group Id"
+      category_name: "Category Name"
+      submit: "Submit"
+      close: "Close"
+      edit_category: "Edit Category"
+      update_success: "Update Success"
+      update_unsuccess: "Update Unsuccess"
+      delete_success: "Delete Success"
+      delete_unsuccess: "Delete Unsuccess"
+    category_group:
+      add_category_group: "Add Category Group"
+      category_group_name: "Category Group Name"
+      submit: "Submit"
+      close: "Close"
+      edit_category_group: "Edit Category Group"
+      categories: "Categories"
+      edit: "Edit"
       delete: "Delete"
+      add_category: "Add Category"
+      action_confirm: "Are you sure?"
+      update_success: "Update Success"
+      update_unsuccess: "Update Unsuccess"
+      delete_unsuccess: "Delete Unsuccess"
+      delete_success: "Delete Success"
+
 
   errors:
     error: "Error"
