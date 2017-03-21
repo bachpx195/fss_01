@@ -155,6 +155,7 @@ en:
     name: "Name"
     number: "Number"
     unit: "Unit"
+    select_unit: "select unit"
 
   category:
     content: "content"

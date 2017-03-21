@@ -155,6 +155,7 @@ vi:
     name: "Tên"
     number: "Số lượng"
     unit: "Đơn vị"
+    select_unit: "-- Chọn đơn vị --"
 
   category:
     content: "Bước phân loại này sẽ giúp cho người dùng tìm thấy công thức của bạn dễ dàng hơn"
@@ -207,6 +208,7 @@ vi:
     about_me: "Bản thân"
     country: "Quốc gia"
     followers: "Followers"
+    view_my_profile: "Hồ sơ của tôi"
     users: "Người dùng"
     home: "Top đầu bếp"
 
