@@ -31,6 +31,24 @@ $(document).ajaxError(function(event, xhr){
   }
 });
 
+$(document).on('click', '.destroy-step-button', function(){
+  var order = 1;
+  $('.step-form').each(function(){
+    if ($(this).css("display") != "none") {
+      $(this).find('.step-order').val(order++);
+    }
+  });
+});
+
+$(document).on('click', '.add-step-button', function(){
+  var order = 1;
+  $('.step-form').each(function(index){
+    if ($(this).css("display") != "none") {
+      $(this).find('.step-order').val(order++);
+    }
+  });
+});
+
 $(document).on('click', '.like-button', function(e){
   e.preventDefault();
   $(this).next('form').submit();
@@ -39,7 +57,7 @@ $(document).on('click', '.like-button', function(e){
 $(document).on('click', '.tab-button', function(e){
   e.preventDefault();
   $('.tab-item.active').removeClass('active');
-  let tabname = $(this).attr('data-tab');
+  var tabname = $(this).attr('data-tab');
   $('[data-tab="'+ tabname +'"]').addClass('active');
 });
 

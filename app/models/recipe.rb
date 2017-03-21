@@ -56,6 +56,10 @@ class Recipe < ApplicationRecord
     comments.includes(:user).by_posted_time
   end
 
+  def ordered_steps
+    steps.order(:order)
+  end
+
   private
   def update_status
     update_attributes status: Recipe.statuses[:draft]

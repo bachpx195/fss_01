@@ -1,7 +1,7 @@
 module ApplicationHelper
   def link_to_remove_fields name, f
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)",
-      "btn btn-danger")
+      "btn btn-danger destroy-step-button")
   end
 
   def link_to_add_fields name, f, association
@@ -11,7 +11,7 @@ module ApplicationHelper
     end
     link_to_function name,
       "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")",
-      "btn btn-default"
+      "btn btn-default add-step-button"
   end
 
   def link_to_function name, *args, &block

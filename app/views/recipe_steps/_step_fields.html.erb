@@ -1,8 +1,9 @@
-<div class="form-group fields">
+<div class="form-group fields step-form">
   <div class="row">
     <div class="col-lg-1">
       <%= f.label t "step.number_step" %><br>
-      <%= f.number_field :order, class: "form-control" %>
+      <%= f.number_field :order, readonly: "readonly",
+        class: "form-control step-order" %>
     </div>
     <div class="col-lg-8">
       <%= f.label t "step.content" %><br>
