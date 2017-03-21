@@ -24,6 +24,7 @@ class CollectionsController < ApplicationController
   end
 
   def show
+    CalculateViewsCountService.new(@collection).calculate
   end
 
   private

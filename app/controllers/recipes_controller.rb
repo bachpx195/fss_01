@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
 
   def show
     @new_comment = @recipe.comments.build
+    CalculateViewsCountService.new(@recipe).calculate
   end
 
   def new
